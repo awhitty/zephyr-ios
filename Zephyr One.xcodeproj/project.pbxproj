@@ -52,6 +52,7 @@
 		D94458C71AD7391100E234F5 /* Drive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Drive.storyboard; sourceTree = "<group>"; };
 		D94458C91AD73BC800E234F5 /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
 		D94458CB1AD73C3A00E234F5 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zephyr-One-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 			children = (
 				D92E29FE1AD730E900B926B1 /* Interface */,
 				D92E29D71AD72EF000B926B1 /* Supporting Files */,
+				D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */,
 			);
 			path = "Zephyr One";
 			sourceTree = "<group>";
@@ -465,6 +467,7 @@
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -476,6 +479,7 @@
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
 			};
 			name = Release;
 		};
