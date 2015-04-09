@@ -7,7 +7,7 @@
         <!--Drive-->
         <scene sceneID="d3J-mF-Dhp">
             <objects>
-                <viewController title="Drive" id="Uf7-iX-onZ" sceneMemberID="viewController">
+                <viewController title="Drive" id="Uf7-iX-onZ" customClass="DriveViewController" customModule="Zephyr_One" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UpS-go-NCB"/>
                         <viewControllerLayoutGuide type="bottom" id="gDQ-ky-Js6"/>
