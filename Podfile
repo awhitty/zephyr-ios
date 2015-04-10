@@ -4,6 +4,7 @@
 target 'Zephyr One' do
     pod 'ionicons'
     pod 'RBStoryboardLink'
+    pod 'GGTabBar', '~> 0.0.2'
 end
 
 target 'Zephyr OneTests' do

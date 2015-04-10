@@ -10,7 +10,6 @@
 		A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */; };
 		D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29D91AD72EF000B926B1 /* AppDelegate.swift */; };
 		D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */; };
-		D92E29DF1AD72EF000B926B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29DE1AD72EF000B926B1 /* ViewController.swift */; };
 		D92E29E41AD72EF000B926B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92E29E31AD72EF000B926B1 /* Images.xcassets */; };
 		D92E29E71AD72EF000B926B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */; };
 		D92E29F31AD72EF000B926B1 /* Zephyr_OneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29F21AD72EF000B926B1 /* Zephyr_OneTests.swift */; };
@@ -22,6 +21,8 @@
 		D94458CC1AD73C3A00E234F5 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94458CB1AD73C3A00E234F5 /* Feed.storyboard */; };
 		D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */; };
 		D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D01AD7446200E234F5 /* DriveViewController.swift */; };
+		D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D21AD747CE00E234F5 /* MainViewController.swift */; };
+		D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		D92E29D81AD72EF000B926B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92E29D91AD72EF000B926B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92E29DC1AD72EF000B926B1 /* Zephyr_One.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zephyr_One.xcdatamodel; sourceTree = "<group>"; };
-		D92E29DE1AD72EF000B926B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D92E29E31AD72EF000B926B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D92E29E61AD72EF000B926B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D92E29EC1AD72EF000B926B1 /* Zephyr OneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zephyr OneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +57,8 @@
 		D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zephyr-One-Bridging-Header.h"; sourceTree = "<group>"; };
 		D94458D01AD7446200E234F5 /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
+		D94458D21AD747CE00E234F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D92E29FC1AD72F0700B926B1 /* Main.storyboard */,
-				D92E29DE1AD72EF000B926B1 /* ViewController.swift */,
+				D94458D21AD747CE00E234F5 /* MainViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				D94458C91AD73BC800E234F5 /* More.storyboard */,
+				D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -350,11 +353,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92E29DF1AD72EF000B926B1 /* ViewController.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
 				D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */,
+				D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */,
+				D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

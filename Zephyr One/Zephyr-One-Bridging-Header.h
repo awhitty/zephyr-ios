@@ -10,5 +10,8 @@
 #define Zephyr_One_Zephyr_One_Bridging_Header_h
 
 #import "IonIcons.h"
+#import "GGTabBar.h"
+#import "GGTabBarAppearanceKeys.h"
+#import "GGTabBarController.h"
 
 #endif

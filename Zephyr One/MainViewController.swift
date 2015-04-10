@@ -1,5 +1,5 @@
 //
-//  DriveViewController.swift
+//  MainViewController.swift
 //  Zephyr One
 //
 //  Created by Austin Whittier on 4/9/15.
@@ -8,20 +8,28 @@
 
 import UIKit
 
-class DriveViewController: UIViewController {
+class MainViewController: GGTabBarController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let normal = IonIcons.imageWithIcon(ion_ios_circle_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let drive = UIStoryboard(name: "Drive", bundle: nil)
+        let driveVC = drive.instantiateInitialViewController() as UIViewController
         
-        let selected = IonIcons.imageWithIcon(ion_ios_circle_filled, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let feed = UIStoryboard(name: "Feed", bundle: nil)
+        let feedVC = feed.instantiateInitialViewController() as UIViewController
         
-        self.tabBarItem = UITabBarItem(title: "Drive", image: normal, selectedImage: selected)
+        let more = UIStoryboard(name: "More", bundle: nil)
+        let moreVC = more.instantiateInitialViewController() as UIViewController
+        
+        self.viewControllers = [feedVC, driveVC, moreVC]
+        self.tabBarAppearanceSettings = [kTabBarAppearanceBackgroundColor : UIColor.clearColor()]
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

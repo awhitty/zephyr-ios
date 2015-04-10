@@ -1,5 +1,5 @@
 //
-//  FeedTableViewController.swift
+//  MoreTableViewController.swift
 //  Zephyr One
 //
 //  Created by Austin Whittier on 4/9/15.
@@ -8,14 +8,15 @@
 
 import UIKit
 
-class FeedTableViewController: UITableViewController {
+class MoreTableViewController: UITableViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let normal = IonIcons.imageWithIcon(ion_ios_paper_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let normal = IonIcons.imageWithIcon(ion_ios_more_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
-        let selected = IonIcons.imageWithIcon(ion_ios_paper, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let selected = IonIcons.imageWithIcon(ion_ios_more, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        
         self.tabBarItem = UITabBarItem(title: "Drive", image: normal, selectedImage: selected)
     }
 
