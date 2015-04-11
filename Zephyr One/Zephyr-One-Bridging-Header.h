@@ -10,6 +10,7 @@
 #define Zephyr_One_Zephyr_One_Bridging_Header_h
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "IonIcons.h"
 #import "GGTabBar.h"
 #import "GGTabBarAppearanceKeys.h"

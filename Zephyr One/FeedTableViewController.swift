@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
-class FeedTableViewController: UITableViewController {
+class FeedTableViewController: PFQueryTableViewController {
     
     var drives = ["First drive...", "Second drive"]
     
@@ -18,13 +20,14 @@ class FeedTableViewController: UITableViewController {
         let normal = IonIcons.imageWithIcon(ion_ios_paper_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
         let selected = IonIcons.imageWithIcon(ion_ios_paper, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
-        self.tabBarItem = UITabBarItem(title: "Drive", image: normal, selectedImage: selected)
+        self.tabBarItem = UITabBarItem(title: "Feed", image: normal, selectedImage: selected)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.separatorColor = UIColor.clearColor()
+//        self.tableView.rowHeight = UITableViewAutomaticDimension;
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,80 +35,25 @@ class FeedTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func queryForTable() -> PFQuery! {
+        var query = PFQuery(className: "Drive")
+        
+        query.orderByDescending("createdAt")
+        
+        return query
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return drives.count
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Card", forIndexPath: indexPath) as CardCell
-
-        let drive = drives[indexPath.row]
-        cell.titleLabel.text = drive
-        cell.subtitleLabel.text = "Just a subtitle... hi"
-        cell.imageView?.image = UIImage(named: "Seca")
+    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Card") as CardCell
+        
+        cell.titleLabel.text = object["user"] as? String
+        cell.subtitleLabel.text = object["carDescription"] as? String
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        cell.dateLabel.text = dateFormatter.stringFromDate(object.createdAt)
         
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

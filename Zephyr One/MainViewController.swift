@@ -8,11 +8,15 @@
 
 import UIKit
 
-class MainViewController: GGTabBarController {
+class MainViewController: UITabBarController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         let drive = UIStoryboard(name: "Drive", bundle: nil)
         let driveVC = drive.instantiateInitialViewController() as UIViewController
         
@@ -23,13 +27,6 @@ class MainViewController: GGTabBarController {
         let moreVC = more.instantiateInitialViewController() as UIViewController
         
         self.viewControllers = [feedVC, driveVC, moreVC]
-        self.tabBarAppearanceSettings = [kTabBarAppearanceBackgroundColor : UIColor.clearColor()]
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -24,12 +24,12 @@
                                             <rect key="frame" x="8" y="8" width="584" height="167.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReF-f2-9lx">
-                                                    <rect key="frame" x="79.5" y="12" width="488.5" height="19.5"/>
+                                                    <rect key="frame" x="80" y="12" width="487.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-xI-81K">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seca" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-xI-81K">
                                                     <rect key="frame" x="8" y="8" width="64" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="9NV-HJ-Iyd"/>
@@ -43,38 +43,52 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-pE-eXd">
-                                                    <rect key="frame" x="79.5" y="35" width="35.5" height="17"/>
+                                                    <rect key="frame" x="80" y="35" width="35.5" height="17"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M95-F4-FxB">
-                                                    <rect key="frame" x="0.0" y="123.5" width="584" height="44"/>
+                                                    <rect key="frame" x="0.0" y="124" width="584" height="44"/>
                                                     <items/>
                                                 </toolbar>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-ek-9XO">
+                                                    <rect key="frame" x="539.5" y="16.5" width="28.5" height="13.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="fLT-xI-81K" firstAttribute="leading" secondItem="XQN-b6-uRE" secondAttribute="leading" constant="8" id="1kg-P5-JSZ"/>
                                                 <constraint firstItem="ReF-f2-9lx" firstAttribute="top" secondItem="XQN-b6-uRE" secondAttribute="top" constant="16" id="8u1-Xa-qM9"/>
                                                 <constraint firstAttribute="trailing" secondItem="ReF-f2-9lx" secondAttribute="trailing" constant="16" id="BaV-83-1vw"/>
+                                                <constraint firstItem="ReF-f2-9lx" firstAttribute="leading" secondItem="DUg-ek-9XO" secondAttribute="leading" constant="-263" id="H4w-5p-jOM"/>
                                                 <constraint firstItem="fLT-xI-81K" firstAttribute="top" secondItem="XQN-b6-uRE" secondAttribute="top" constant="8" id="IBX-Tj-Qaf"/>
                                                 <constraint firstItem="M95-F4-FxB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fLT-xI-81K" secondAttribute="bottom" priority="750" constant="8" id="Lca-nl-C1P"/>
+                                                <constraint firstItem="DUg-ek-9XO" firstAttribute="top" secondItem="XQN-b6-uRE" secondAttribute="top" constant="8" id="MG9-VB-2oN"/>
                                                 <constraint firstAttribute="bottom" secondItem="fLT-xI-81K" secondAttribute="bottom" priority="750" constant="16" id="Ox4-ON-zoW"/>
                                                 <constraint firstItem="fLT-xI-81K" firstAttribute="top" secondItem="ReF-f2-9lx" secondAttribute="top" constant="-4" id="P40-Tq-xwo"/>
+                                                <constraint firstItem="ReF-f2-9lx" firstAttribute="baseline" secondItem="DUg-ek-9XO" secondAttribute="baseline" id="P4v-bF-gzo"/>
                                                 <constraint firstAttribute="bottom" secondItem="M95-F4-FxB" secondAttribute="bottom" id="VV5-DV-HVa"/>
                                                 <constraint firstItem="M95-F4-FxB" firstAttribute="leading" secondItem="XQN-b6-uRE" secondAttribute="leading" id="Waz-np-LPv"/>
+                                                <constraint firstItem="ReF-f2-9lx" firstAttribute="baseline" secondItem="DUg-ek-9XO" secondAttribute="baseline" id="dsG-wU-OX1"/>
                                                 <constraint firstItem="ReF-f2-9lx" firstAttribute="leading" secondItem="fLT-xI-81K" secondAttribute="trailing" constant="8" id="gII-aw-iTI"/>
                                                 <constraint firstItem="ReF-f2-9lx" firstAttribute="leading" secondItem="XQN-b6-uRE" secondAttribute="leading" constant="16" id="k1e-8Z-1MB"/>
                                                 <constraint firstItem="ReF-f2-9lx" firstAttribute="leading" secondItem="6Qv-pE-eXd" secondAttribute="leading" id="lVZ-Yx-Ufj"/>
                                                 <constraint firstItem="6Qv-pE-eXd" firstAttribute="top" secondItem="ReF-f2-9lx" secondAttribute="bottom" constant="4" id="lkS-5E-iFf"/>
+                                                <constraint firstAttribute="trailing" secondItem="DUg-ek-9XO" secondAttribute="trailing" constant="16" id="xuB-eF-KkA"/>
                                                 <constraint firstAttribute="trailing" secondItem="M95-F4-FxB" secondAttribute="trailing" id="zLn-S7-KPc"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Ox4-ON-zoW"/>
                                                     <exclude reference="8u1-Xa-qM9"/>
+                                                    <exclude reference="H4w-5p-jOM"/>
+                                                    <exclude reference="dsG-wU-OX1"/>
                                                     <exclude reference="k1e-8Z-1MB"/>
+                                                    <exclude reference="MG9-VB-2oN"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -96,6 +110,7 @@
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="cardView" destination="XQN-b6-uRE" id="cqz-T3-flc"/>
+                                    <outlet property="dateLabel" destination="DUg-ek-9XO" id="gH2-Rd-hEb"/>
                                     <outlet property="subtitleLabel" destination="6Qv-pE-eXd" id="Ydf-qt-Lau"/>
                                     <outlet property="titleLabel" destination="ReF-f2-9lx" id="FnL-ln-pgS"/>
                                     <outlet property="trackImage" destination="fLT-xI-81K" id="XLH-Ac-aSP"/>
@@ -120,6 +135,9 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="Drive"/>
+                    </userDefinedRuntimeAttributes>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05K-3T-w6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,14 +188,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A track would be rendered here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-pr-RUa">
-                                <rect key="frame" x="172" y="114" width="256" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A track would be rendered here..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNL-pr-RUa">
+                                <rect key="frame" x="176.5" y="115" width="247" height="19.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.45882352939999999" green="0.78039215689999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="xNL-pr-RUa" secondAttribute="centerY" id="VCh-XX-JWF"/>
+                            <constraint firstAttribute="centerX" secondItem="xNL-pr-RUa" secondAttribute="centerX" id="ceV-Yg-36l"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                 </viewController>
@@ -204,4 +226,7 @@
             <point key="canvasLocation" x="-244" y="2327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Seca" width="861" height="821"/>
+    </resources>
 </document>
