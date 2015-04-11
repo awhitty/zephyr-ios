@@ -188,6 +188,7 @@
 		D92E29D61AD72EF000B926B1 /* Zephyr One */ = {
 			isa = PBXGroup;
 			children = (
+				D92E29D91AD72EF000B926B1 /* AppDelegate.swift */,
 				D92E29FE1AD730E900B926B1 /* Interface */,
 				D92E29D71AD72EF000B926B1 /* Supporting Files */,
 				D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */,
@@ -198,7 +199,6 @@
 		D92E29D71AD72EF000B926B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D92E29D91AD72EF000B926B1 /* AppDelegate.swift */,
 				D92E29E31AD72EF000B926B1 /* Images.xcassets */,
 				D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */,
 				D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */,
