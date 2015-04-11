@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */; };
+		D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570291AD8B8B50037A7AE /* Parse.framework */; };
+		D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702A1AD8B8B50037A7AE /* ParseUI.framework */; };
+		D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */; };
+		D92570301AD8B8DF0037A7AE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702F1AD8B8DF0037A7AE /* CFNetwork.framework */; };
+		D92570321AD8B8E50037A7AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570311AD8B8E50037A7AE /* CoreGraphics.framework */; };
+		D92570341AD8B8EB0037A7AE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570331AD8B8EB0037A7AE /* CoreLocation.framework */; };
+		D925703A1AD8B9230037A7AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570351AD8B9230037A7AE /* MobileCoreServices.framework */; };
+		D925703B1AD8B9230037A7AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570361AD8B9230037A7AE /* QuartzCore.framework */; };
+		D925703C1AD8B9230037A7AE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570371AD8B9230037A7AE /* Security.framework */; };
+		D925703D1AD8B9230037A7AE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570381AD8B9230037A7AE /* StoreKit.framework */; };
+		D925703E1AD8B9230037A7AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570391AD8B9230037A7AE /* SystemConfiguration.framework */; };
+		D92570401AD8B92A0037A7AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D925703F1AD8B92A0037A7AE /* libsqlite3.dylib */; };
+		D92570421AD8B9330037A7AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570411AD8B9330037A7AE /* libz.dylib */; };
+		D92570441AD8B96F0037A7AE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570431AD8B96F0037A7AE /* Bolts.framework */; };
+		D92570461AD8B9D00037A7AE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570451AD8B9CF0037A7AE /* Social.framework */; };
+		D92570481AD8B9E70037A7AE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570471AD8B9E70037A7AE /* Accounts.framework */; };
+		D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92570491AD8E35E0037A7AE /* Hexes.swift */; };
 		D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29D91AD72EF000B926B1 /* AppDelegate.swift */; };
 		D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */; };
 		D92E29E41AD72EF000B926B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92E29E31AD72EF000B926B1 /* Images.xcassets */; };
@@ -40,6 +57,23 @@
 		A8027D7D892A301398224ABA /* Pods-Zephyr One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.release.xcconfig"; sourceTree = "<group>"; };
 		BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zephyr One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BBD8B74A3B5F11EC8A251E /* Pods-Zephyr One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.debug.xcconfig"; sourceTree = "<group>"; };
+		D92570291AD8B8B50037A7AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D925702A1AD8B8B50037A7AE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D925702F1AD8B8DF0037A7AE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D92570311AD8B8E50037A7AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D92570331AD8B8EB0037A7AE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D92570351AD8B9230037A7AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D92570361AD8B9230037A7AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D92570371AD8B9230037A7AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D92570381AD8B9230037A7AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D92570391AD8B9230037A7AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D925703F1AD8B92A0037A7AE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D92570411AD8B9330037A7AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D92570431AD8B96F0037A7AE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D92570451AD8B9CF0037A7AE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D92570471AD8B9E70037A7AE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D92570491AD8E35E0037A7AE /* Hexes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexes.swift; sourceTree = "<group>"; };
 		D92E29D41AD72EF000B926B1 /* Zephyr One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zephyr One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92E29D81AD72EF000B926B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92E29D91AD72EF000B926B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +102,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D92570481AD8B9E70037A7AE /* Accounts.framework in Frameworks */,
+				D92570461AD8B9D00037A7AE /* Social.framework in Frameworks */,
+				D92570441AD8B96F0037A7AE /* Bolts.framework in Frameworks */,
+				D92570421AD8B9330037A7AE /* libz.dylib in Frameworks */,
+				D92570401AD8B92A0037A7AE /* libsqlite3.dylib in Frameworks */,
+				D925703A1AD8B9230037A7AE /* MobileCoreServices.framework in Frameworks */,
+				D925703B1AD8B9230037A7AE /* QuartzCore.framework in Frameworks */,
+				D925703C1AD8B9230037A7AE /* Security.framework in Frameworks */,
+				D925703D1AD8B9230037A7AE /* StoreKit.framework in Frameworks */,
+				D925703E1AD8B9230037A7AE /* SystemConfiguration.framework in Frameworks */,
+				D92570341AD8B8EB0037A7AE /* CoreLocation.framework in Frameworks */,
+				D92570321AD8B8E50037A7AE /* CoreGraphics.framework in Frameworks */,
+				D92570301AD8B8DF0037A7AE /* CFNetwork.framework in Frameworks */,
+				D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */,
+				D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */,
+				D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */,
 				A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +144,22 @@
 		C77A0FF65832694390DD081F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D92570471AD8B9E70037A7AE /* Accounts.framework */,
+				D92570451AD8B9CF0037A7AE /* Social.framework */,
+				D92570431AD8B96F0037A7AE /* Bolts.framework */,
+				D92570411AD8B9330037A7AE /* libz.dylib */,
+				D925703F1AD8B92A0037A7AE /* libsqlite3.dylib */,
+				D92570351AD8B9230037A7AE /* MobileCoreServices.framework */,
+				D92570361AD8B9230037A7AE /* QuartzCore.framework */,
+				D92570371AD8B9230037A7AE /* Security.framework */,
+				D92570381AD8B9230037A7AE /* StoreKit.framework */,
+				D92570391AD8B9230037A7AE /* SystemConfiguration.framework */,
+				D92570331AD8B8EB0037A7AE /* CoreLocation.framework */,
+				D92570311AD8B8E50037A7AE /* CoreGraphics.framework */,
+				D925702F1AD8B8DF0037A7AE /* CFNetwork.framework */,
+				D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */,
+				D92570291AD8B8B50037A7AE /* Parse.framework */,
+				D925702A1AD8B8B50037A7AE /* ParseUI.framework */,
 				BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */,
 			);
 			name = Frameworks;
@@ -124,9 +190,11 @@
 		D92E29D61AD72EF000B926B1 /* Zephyr One */ = {
 			isa = PBXGroup;
 			children = (
+				D92E29D91AD72EF000B926B1 /* AppDelegate.swift */,
 				D92E29FE1AD730E900B926B1 /* Interface */,
 				D92E29D71AD72EF000B926B1 /* Supporting Files */,
 				D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */,
+				D92570491AD8E35E0037A7AE /* Hexes.swift */,
 			);
 			path = "Zephyr One";
 			sourceTree = "<group>";
@@ -134,7 +202,6 @@
 		D92E29D71AD72EF000B926B1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D92E29D91AD72EF000B926B1 /* AppDelegate.swift */,
 				D92E29E31AD72EF000B926B1 /* Images.xcassets */,
 				D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */,
 				D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */,
@@ -359,6 +426,7 @@
 				D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
+				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
 				D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */,
 				D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */,
@@ -481,6 +549,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +567,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

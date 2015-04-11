@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CardCell: UITableViewCell {
+class CardCell: PFTableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var trackImage: UIImageView!
