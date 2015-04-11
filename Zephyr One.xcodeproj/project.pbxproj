@@ -23,6 +23,7 @@
 		D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D01AD7446200E234F5 /* DriveViewController.swift */; };
 		D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D21AD747CE00E234F5 /* MainViewController.swift */; };
 		D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */; };
+		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D94458D01AD7446200E234F5 /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		D94458D21AD747CE00E234F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				D94458CB1AD73C3A00E234F5 /* Feed.storyboard */,
 				D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */,
+				D9FDDA3E1AD75839004C7131 /* CardCell.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
@@ -476,7 +480,9 @@
 			baseConfigurationReference = D6BBD8B74A3B5F11EC8A251E /* Pods-Zephyr One.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
@@ -488,7 +494,9 @@
 			baseConfigurationReference = A8027D7D892A301398224ABA /* Pods-Zephyr One.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Zephyr One/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
