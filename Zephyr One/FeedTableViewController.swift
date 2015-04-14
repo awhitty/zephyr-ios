@@ -36,7 +36,7 @@ class FeedTableViewController: PFQueryTableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func queryForTable() -> PFQuery! {
+    override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "Drive")
         
         query.orderByDescending("createdAt")
@@ -44,15 +44,17 @@ class FeedTableViewController: PFQueryTableViewController {
         return query
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!, object: PFObject!) -> PFTableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Card") as CardCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Card") as! CardCell
         
         cell.titleLabel.text = object["user"] as? String
         cell.subtitleLabel.text = object["carDescription"] as? String
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        cell.dateLabel.text = dateFormatter.stringFromDate(object.createdAt)
+
+        if let date = object.createdAt {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+            cell.dateLabel.text = dateFormatter.stringFromDate(date)
+        }
         
         return cell
     }
