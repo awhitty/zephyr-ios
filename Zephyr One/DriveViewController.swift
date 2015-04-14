@@ -29,7 +29,14 @@ class DriveViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+//    @IBOutlet weak var stopWatchDisplay: UILabel!
+//
+//    @IBAction func startStopWatch(sender: AnyObject) {
+//    }
+//    
+//    @IBAction func stopStopWatch(sender: AnyObject) {
+//    }
+    
     /*
     // MARK: - Navigation
 
