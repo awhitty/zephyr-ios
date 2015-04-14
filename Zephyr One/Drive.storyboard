@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startStopWatch:" destination="Uf7-iX-onZ" eventType="touchUpInside" id="7VJ-qx-6k3"/>
+                                    <action selector="startSW:" destination="Uf7-iX-onZ" eventType="touchUpInside" id="oR2-9R-wEo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6I-tY-IhV">
@@ -50,7 +50,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopStopWatch:" destination="Uf7-iX-onZ" eventType="touchUpInside" id="vgK-wm-muV"/>
+                                    <action selector="stopSW:" destination="Uf7-iX-onZ" eventType="touchUpInside" id="kej-ZI-m7h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iab-S8-R04">
@@ -126,9 +126,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Drive" id="jno-x1-35g"/>
                     <connections>
+                        <outlet property="SWDisplay" destination="ilu-3n-Blv" id="mvN-rM-wNn"/>
+                        <outlet property="curSpeed" destination="14X-6M-20h" id="QnA-Fa-Bkd"/>
+                        <outlet property="curTrackTitle" destination="p9S-3p-C88" id="vjB-gQ-WKk"/>
+                        <outlet property="lastLapTime" destination="iab-S8-R04" id="ntL-Dk-EVw"/>
                         <outlet property="startStopWatchBtn" destination="Fl8-HO-VPm" id="h7T-Gx-NKZ"/>
-                        <outlet property="stopWatch" destination="GcF-Lq-BDx" id="Ya3-44-P0d"/>
-                        <outlet property="stopWatchDisplay" destination="ilu-3n-Blv" id="CXV-Dg-0jh"/>
+                        <outlet property="stopWatchDisplay" destination="ilu-3n-Blv" id="PLb-a4-t0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILX-Ok-acx" userLabel="First Responder" sceneMemberID="firstResponder"/>
