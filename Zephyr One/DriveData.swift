@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class DriveData {
+    var trackPoints: [DriveDataPoint] = []
+    // todo: what else?
+}

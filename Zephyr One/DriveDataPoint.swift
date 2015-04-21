@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class DriveDataPoint {
+    var timestamp: NSDate!
+//    var recordedData
+//    var computedData
+}
