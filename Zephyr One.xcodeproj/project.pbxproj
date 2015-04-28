@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */; };
+		68CF0EED3693330DDE7BD5BD /* Pods_Zephyr_One.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6844A1CC35C7B81BA00BC854 /* Pods_Zephyr_One.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570291AD8B8B50037A7AE /* Parse.framework */; };
 		D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702A1AD8B8B50037A7AE /* ParseUI.framework */; };
 		D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */; };
@@ -57,8 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6844A1CC35C7B81BA00BC854 /* Pods_Zephyr_One.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zephyr_One.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8027D7D892A301398224ABA /* Pods-Zephyr One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.release.xcconfig"; sourceTree = "<group>"; };
-		BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zephyr One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BBD8B74A3B5F11EC8A251E /* Pods-Zephyr One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.debug.xcconfig"; sourceTree = "<group>"; };
 		D92570291AD8B8B50037A7AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D925702A1AD8B8B50037A7AE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */,
 				D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */,
 				D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */,
-				A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */,
+				68CF0EED3693330DDE7BD5BD /* Pods_Zephyr_One.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 				D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */,
 				D92570291AD8B8B50037A7AE /* Parse.framework */,
 				D925702A1AD8B8B50037A7AE /* ParseUI.framework */,
-				BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */,
+				6844A1CC35C7B81BA00BC854 /* Pods_Zephyr_One.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,6 +303,7 @@
 				D92E29D11AD72EF000B926B1 /* Frameworks */,
 				D92E29D21AD72EF000B926B1 /* Resources */,
 				AE658D1575D12633DB77BBA1 /* Copy Pods Resources */,
+				674E76A29A35C4EE9BAF060C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -403,6 +404,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		674E76A29A35C4EE9BAF060C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		73E66556AEDD1B18A4BA3147 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
