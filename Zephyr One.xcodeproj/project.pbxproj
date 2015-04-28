@@ -17,7 +17,6 @@
 		D925703A1AD8B9230037A7AE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570351AD8B9230037A7AE /* MobileCoreServices.framework */; };
 		D925703B1AD8B9230037A7AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570361AD8B9230037A7AE /* QuartzCore.framework */; };
 		D925703C1AD8B9230037A7AE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570371AD8B9230037A7AE /* Security.framework */; };
-		D925703D1AD8B9230037A7AE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570381AD8B9230037A7AE /* StoreKit.framework */; };
 		D925703E1AD8B9230037A7AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570391AD8B9230037A7AE /* SystemConfiguration.framework */; };
 		D92570401AD8B92A0037A7AE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D925703F1AD8B92A0037A7AE /* libsqlite3.dylib */; };
 		D92570421AD8B9330037A7AE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570411AD8B9330037A7AE /* libz.dylib */; };
@@ -40,6 +39,10 @@
 		D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D01AD7446200E234F5 /* DriveViewController.swift */; };
 		D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D21AD747CE00E234F5 /* MainViewController.swift */; };
 		D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */; };
+		D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBF91AE709A600330CF5 /* DriveRecorder.swift */; };
+		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
+		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
+		D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +69,6 @@
 		D92570351AD8B9230037A7AE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D92570361AD8B9230037A7AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D92570371AD8B9230037A7AE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D92570381AD8B9230037A7AE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D92570391AD8B9230037A7AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D925703F1AD8B92A0037A7AE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D92570411AD8B9330037A7AE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -94,6 +96,10 @@
 		D94458D01AD7446200E234F5 /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		D94458D21AD747CE00E234F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		D9C2FBF91AE709A600330CF5 /* DriveRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveRecorder.swift; sourceTree = "<group>"; };
+		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
+		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
+		D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDataPoint.swift; sourceTree = "<group>"; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +116,6 @@
 				D925703A1AD8B9230037A7AE /* MobileCoreServices.framework in Frameworks */,
 				D925703B1AD8B9230037A7AE /* QuartzCore.framework in Frameworks */,
 				D925703C1AD8B9230037A7AE /* Security.framework in Frameworks */,
-				D925703D1AD8B9230037A7AE /* StoreKit.framework in Frameworks */,
 				D925703E1AD8B9230037A7AE /* SystemConfiguration.framework in Frameworks */,
 				D92570341AD8B8EB0037A7AE /* CoreLocation.framework in Frameworks */,
 				D92570321AD8B8E50037A7AE /* CoreGraphics.framework in Frameworks */,
@@ -152,7 +157,6 @@
 				D92570351AD8B9230037A7AE /* MobileCoreServices.framework */,
 				D92570361AD8B9230037A7AE /* QuartzCore.framework */,
 				D92570371AD8B9230037A7AE /* Security.framework */,
-				D92570381AD8B9230037A7AE /* StoreKit.framework */,
 				D92570391AD8B9230037A7AE /* SystemConfiguration.framework */,
 				D92570331AD8B8EB0037A7AE /* CoreLocation.framework */,
 				D92570311AD8B8E50037A7AE /* CoreGraphics.framework */,
@@ -191,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D92E29D91AD72EF000B926B1 /* AppDelegate.swift */,
-				D92E29FE1AD730E900B926B1 /* Interface */,
+				D92E29FE1AD730E900B926B1 /* Components */,
 				D92E29D71AD72EF000B926B1 /* Supporting Files */,
 				D94458CF1AD7416000E234F5 /* Zephyr-One-Bridging-Header.h */,
 				D92570491AD8E35E0037A7AE /* Hexes.swift */,
@@ -227,16 +231,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D92E29FE1AD730E900B926B1 /* Interface */ = {
+		D92E29FE1AD730E900B926B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				D92E2A001AD730F800B926B1 /* Common */,
 				D92E29FF1AD730F200B926B1 /* Main */,
 				D92E2A021AD7310300B926B1 /* Feed */,
-				D92E2A011AD730FE00B926B1 /* Drive */,
+				D92E2A011AD730FE00B926B1 /* Drive recorder */,
 				D92E2A031AD7310900B926B1 /* More */,
 			);
-			name = Interface;
+			name = Components;
 			sourceTree = "<group>";
 		};
 		D92E29FF1AD730F200B926B1 /* Main */ = {
@@ -251,17 +255,21 @@
 		D92E2A001AD730F800B926B1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D9C2FBFB1AE709F100330CF5 /* Drive.swift */,
+				D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */,
+				D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
 		};
-		D92E2A011AD730FE00B926B1 /* Drive */ = {
+		D92E2A011AD730FE00B926B1 /* Drive recorder */ = {
 			isa = PBXGroup;
 			children = (
 				D94458C71AD7391100E234F5 /* Drive.storyboard */,
 				D94458D01AD7446200E234F5 /* DriveViewController.swift */,
+				D9C2FBF91AE709A600330CF5 /* DriveRecorder.swift */,
 			);
-			name = Drive;
+			name = "Drive recorder";
 			sourceTree = "<group>";
 		};
 		D92E2A021AD7310300B926B1 /* Feed */ = {
@@ -334,6 +342,15 @@
 				TargetAttributes = {
 					D92E29D31AD72EF000B926B1 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = FUTU96J3U9;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					D92E29EB1AD72EF000B926B1 = {
 						CreatedOnToolsVersion = 6.2;
@@ -426,9 +443,13 @@
 				D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
+				D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */,
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
+				D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */,
 				D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */,
+				D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */,
+				D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */,
 				D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */,
 				D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */,
 			);
@@ -549,6 +570,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -557,6 +580,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
 			};
 			name = Debug;
@@ -567,6 +591,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -575,6 +601,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Zephyr One/Zephyr-One-Bridging-Header.h";
 			};
 			name = Release;
