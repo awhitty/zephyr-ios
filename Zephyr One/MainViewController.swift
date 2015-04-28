@@ -18,13 +18,13 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
 
         let drive = UIStoryboard(name: "Drive", bundle: nil)
-        let driveVC = drive.instantiateInitialViewController() as UIViewController
+        let driveVC = drive.instantiateInitialViewController() as! UIViewController
         
         let feed = UIStoryboard(name: "Feed", bundle: nil)
-        let feedVC = feed.instantiateInitialViewController() as UIViewController
+        let feedVC = feed.instantiateInitialViewController() as! UIViewController
         
         let more = UIStoryboard(name: "More", bundle: nil)
-        let moreVC = more.instantiateInitialViewController() as UIViewController
+        let moreVC = more.instantiateInitialViewController() as! UIViewController
         
         self.viewControllers = [feedVC, driveVC, moreVC]
     }
