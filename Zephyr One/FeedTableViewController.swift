@@ -43,6 +43,30 @@ class FeedTableViewController: PFQueryTableViewController {
         
         return query
     }
+    
+    @IBAction func feedModeChanged(sender: UISegmentedControl) {
+        let mode = sender.selectedSegmentIndex
+        
+        if mode == 1 {
+            // check if the user is signed in
+            // otherwise push a sign in view on the screen
+            
+            
+            PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: {
+                (user: PFUser?, error: NSError?) -> Void in
+                if let user = user {
+                    if user.isNew {
+                        println("User signed up and logged in through Facebook!")
+                    } else {
+                        println("User logged in through Facebook!")
+                    }
+                } else {
+                    println("Uh oh. The user cancelled the Facebook login.")
+                }
+            })
+        }
+    }
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Card") as! CardCell
@@ -58,4 +82,5 @@ class FeedTableViewController: PFQueryTableViewController {
         
         return cell
     }
+    
 }

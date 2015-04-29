@@ -1,19 +1,16 @@
 PODS:
   - GGTabBar (0.0.2)
   - ionicons (2.0.1)
-  - Locksmith (1.2.1)
   - RBStoryboardLink (0.1.4)
 
 DEPENDENCIES:
   - GGTabBar (~> 0.0.2)
   - ionicons
-  - Locksmith
   - RBStoryboardLink
 
 SPEC CHECKSUMS:
   GGTabBar: bd0f580e8861e922385f06659d21019e61de9150
   ionicons: c7b0867373392e85c17f613d19ade04ccfbe5a7c
-  Locksmith: 770f6c5c6e5c5c712d1f00e709c62b8a7240c716
   RBStoryboardLink: 0faae84aea6a5e8716c4469984d847d958c3fcb3
 
 COCOAPODS: 0.37.0.rc.1

@@ -133,6 +133,9 @@
                                 <segment title="Friends"/>
                                 <segment title="Everyone"/>
                             </segments>
+                            <connections>
+                                <action selector="feedModeChanged:" destination="S7j-dU-xDO" eventType="valueChanged" id="SEM-XW-VTI"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
