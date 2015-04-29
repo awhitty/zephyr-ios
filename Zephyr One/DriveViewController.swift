@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DriveViewController: UIViewController {
+class DriveViewController: UIViewController, CLLocationManagerDelegate {
+    
+    // MARK: - View life cycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,65 +24,39 @@ class DriveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        driveRecorder = DriveRecorder()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var curTrackTitle: UILabel!
-    @IBOutlet weak var curSpeed: UILabel!
-    @IBOutlet weak var lastLapTime: UILabel!
-    @IBOutlet weak var SWDisplay: UILabel!
+    // MARK: - Data logging
     
-    var startTime = NSTimeInterval()
-  
-    func updateTime() {
-       
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
-        
-        //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = (currentTime - startTime)
-        
-        //calculate the minutes in elapsed time.
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        //calculate the seconds in elapsed time.
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        //find out the fraction of milliseconds to be displayed.
-        let fraction = UInt8(elapsedTime * 100)
-        
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
-        let strMinutes = minutes > 9 ? String(minutes):"0" + String(minutes)
-        let strSeconds = seconds > 9 ? String(seconds):"0" + String(seconds)
-        let strFraction = fraction > 9 ? String(fraction):"0" + String(fraction)
-        
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-        SWDisplay.text = "\(strMinutes):\(strSeconds):\(strFraction)"
-    }
+    var driveRecorder: DriveRecorder!
     
-    var timer = NSTimer()
-    @IBAction func startSW(sender: AnyObject) {
-        if !timer.valid {
-            let aSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+    // MARK: - Interface controls
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var lastLapLabel: UILabel!
+    
+    @IBOutlet weak var startStopButton: UIButton!
+    
+    @IBAction func toggleRecording(sender: UIButton) {
+        if !driveRecorder.recording {
+            driveRecorder.startRecording()
+            sender.setTitle("Stop recording", forState: UIControlState.Normal)
+        } else {
+            driveRecorder.stopRecording()
+            sender.setTitle("Start recording", forState: UIControlState.Normal)
         }
     }
     
-    @IBAction func stopSW(sender: AnyObject) {
-        timer.invalidate()
-//        timer == nil
+    func displayLocationAuthorizationWarning() {
+        // TODO: Implement this warning message
+        // Should say something about how to enable location services in settings
     }
     
     /*

@@ -15,16 +15,39 @@ class Drive: PFObject, PFSubclassing {
     @NSManaged var user: String
     @NSManaged var trackName: String
     @NSManaged var carDescription: String
-    @NSManaged var driveDataPrimitive: PFFile
+    @NSManaged var driveDataStore: PFFile
+    var driveDataPrimitive: DriveData?
     
-    var driveData: DriveData? {
+    var driveData: DriveData {
         get {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(driveDataPrimitive.getData()!) as? DriveData
+            if driveDataPrimitive == nil {
+                if driveDataStore.getData() != nil {
+                    driveDataPrimitive = NSKeyedUnarchiver.unarchiveObjectWithData(driveDataStore.getData()!) as? DriveData
+                } else {
+                    driveDataPrimitive = DriveData()
+                }
+            }
+            
+            return driveDataPrimitive!
         }
         
         set {
-            // archive the data and save it to the pffile...
+            driveDataPrimitive = newValue
+            driveDataStore = PFFile(data: NSKeyedArchiver.archivedDataWithRootObject(driveData))
         }
+    }
+    
+    func saveWithData() {
+        driveDataStore.save()
+        
+        self.save()
+//        driveDataStore.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+//            if succeeded {
+//                self.saveInBackground()
+//            } else {
+//                println(error)
+//            }
+//        }
     }
     
     override class func initialize() {

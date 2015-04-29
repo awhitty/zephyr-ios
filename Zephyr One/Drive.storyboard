@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z8N-jC-MBz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="z8N-jC-MBz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -37,6 +37,9 @@
                                 <state key="normal" title="Start recording">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toggleRecording:" destination="Uf7-iX-onZ" eventType="touchUpInside" id="mh8-zi-sLh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rww-hL-HaQ">
                                 <rect key="frame" x="152" y="450" width="80" height="21"/>
@@ -132,6 +135,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dVU-GI-fJi"/>
+                    <connections>
+                        <outlet property="lastLapLabel" destination="HH3-A5-U9c" id="RK3-rX-fh3"/>
+                        <outlet property="speedLabel" destination="j49-1M-WI5" id="Fjp-1k-Yfr"/>
+                        <outlet property="startStopButton" destination="62l-nP-7BY" id="lHt-m4-5Rz"/>
+                        <outlet property="timeLabel" destination="RY5-b6-ahW" id="97f-xx-scJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILX-Ok-acx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

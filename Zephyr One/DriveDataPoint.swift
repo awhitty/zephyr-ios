@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import CoreLocation
 
 class DriveDataPoint {
     var timestamp: NSDate!
-//    var recordedData
+    var location: CLLocation!
+    
+    init(time: NSDate, location: CLLocation) {
+        self.timestamp = time
+        self.location = location
+    }
+    
 //    var computedData
 }
