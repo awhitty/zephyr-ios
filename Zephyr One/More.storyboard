@@ -162,14 +162,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPU-9F-rtK">
-                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPU-9F-rtK">
+                                <rect key="frame" x="279" y="253" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5Q-uE-P52">
-                                <rect key="frame" x="277" y="347" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5Q-uE-P52">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -177,9 +177,6 @@
                                     <action selector="signInPressed:" destination="tAk-yu-LcB" eventType="touchUpInside" id="54v-w8-bxb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lom-YC-6Z1">
-                                <rect key="frame" x="180" y="130" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -187,8 +184,6 @@
                             <constraint firstItem="f5Q-uE-P52" firstAttribute="centerX" secondItem="iPU-9F-rtK" secondAttribute="centerX" id="Cwn-jz-7cA"/>
                             <constraint firstItem="f5Q-uE-P52" firstAttribute="top" secondItem="iPU-9F-rtK" secondAttribute="bottom" constant="11" id="Sb5-aS-xH7"/>
                             <constraint firstAttribute="centerY" secondItem="iPU-9F-rtK" secondAttribute="centerY" constant="36.5" id="h1I-PO-WqJ"/>
-                            <constraint firstAttribute="centerX" secondItem="lom-YC-6Z1" secondAttribute="centerX" id="o7c-Yv-d9a"/>
-                            <constraint firstItem="iPU-9F-rtK" firstAttribute="top" secondItem="lom-YC-6Z1" secondAttribute="bottom" constant="31" id="rM6-ed-Q2z"/>
                         </constraints>
                     </view>
                     <connections>

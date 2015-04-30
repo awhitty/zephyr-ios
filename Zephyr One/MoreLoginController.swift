@@ -22,25 +22,28 @@ class MoreLoginController: UIViewController {
 //         self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    var isSignedIn = true;
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+<<<<<<< HEAD
         var currentUser = PFUser.currentUser()
     
+=======
+        let currentUser = PFUser.currentUser()
+        
+        
+>>>>>>> parent of 687d02c... more login -- got login through Facebook to work and booleans to track if current user is signed in--> need name and photo
         if currentUser != nil {
             self.username.text = currentUser!["name"] as! String?
             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
-        
         } else {
-            self.username.text = "Please Sign In"
+            self.username.text = "not signed in"
             self.signInButton.setTitle("Sign in", forState: UIControlState.Normal)
-            isSignedIn = false;
         }
     }
     
     @IBAction func signInPressed(sender: UIButton) {
+<<<<<<< HEAD
         sender.setTitle("Sign out", forState: UIControlState.Normal)
         var currentUser = PFUser.currentUser()
         
@@ -125,5 +128,10 @@ class MoreLoginController: UIViewController {
             isSignedIn = false;
 
         }
+=======
+//        sender.setTitle("Sign out", forState: UIControlState.Normal)
+        
+        println("We would sign in here")
+>>>>>>> parent of 687d02c... more login -- got login through Facebook to work and booleans to track if current user is signed in--> need name and photo
     }
 }
