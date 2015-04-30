@@ -13,6 +13,7 @@
 #import <ParseUI/ParseUI.h>
 #import "IonIcons.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 #endif
