@@ -19,7 +19,7 @@ class MoreLoginController: UIViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     var isSignedIn = true;
@@ -28,9 +28,9 @@ class MoreLoginController: UIViewController {
         super.viewDidAppear(animated)
         
         var currentUser = PFUser.currentUser()
-        
+    
         if currentUser != nil {
-            self.username.text = currentUser?.username //need to get user first name and last name
+            self.username.text = currentUser!["name"] as! String?
             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
         
         } else {
@@ -41,26 +41,83 @@ class MoreLoginController: UIViewController {
     }
     
     @IBAction func signInPressed(sender: UIButton) {
-//        sender.setTitle("Sign out", forState: UIControlState.Normal)
+        sender.setTitle("Sign out", forState: UIControlState.Normal)
         var currentUser = PFUser.currentUser()
+        
+        /*
+         * IF USER IS LOGGING IN
+         */
         if (!isSignedIn) {
+        
             PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: {
                 (user: PFUser?, error: NSError?) -> Void in
+                
                 if let user = user {
                     if user.isNew {
                         println("User signed up and logged in through Facebook!")
                     } else {
                         println("User logged in through Facebook!")
                     }
-                    currentUser = PFUser.currentUser()
-                    self.username.text = currentUser?.username //need to get user first name and last name
-                    self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
-                    self.isSignedIn = true;
+                    
+                    /*
+                     * USING FBSDK TO GRAB PROFILE INFORMATION
+                     */
+                    FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                        if error == nil {
+                            println(result)
+                            user["name"] = result["name"]
+                            user["gender"] = result["gender"]
+                            user["email"] = result["email"]
+                            user["facebookId"] = result["id"]
+                            
+                            let facebookId = result["id"]
+                            
+    
+                            /*
+                             * SETTING PROFILE PICTURE
+                             */
+                            let pictureURL = "https://graph.facebook.com/\(facebookId)/picture?type=large&return_ssl_resources=1"
+                            var URLRequest = NSURL(string: pictureURL)
+                            var URLRequestNeeded = NSURLRequest(URL: URLRequest!)
+                            NSURLConnection.sendAsynchronousRequest(URLRequestNeeded, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!, error: NSError!) -> Void in
+                                if error == nil {
+                                    var picture = PFFile(data: data)
+                                    println(picture)
+                                    user.setObject(picture, forKey: "profilePicture")
+//                                    user.saveInBackground()
+                                }
+                                else {
+                                    println("Error: \(error.localizedDescription)")
+                                }
+                            })
+                            
+                            /*
+                             * SAVING PROFILE AND SAVING SESSION INFORMATION
+                             */
+                            user.saveEventually()
+//                            currentUser = PFUser.currentUser()
+                            
+                            let name = result["name"]
+                            self.username.text = name as! String?
+                            
+                            self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
+                            self.isSignedIn = true;
+
+                        } else {
+                            
+                        }
+                    })
+                    
                 } else {
                     println("Uh oh. The user cancelled the Facebook login.")
                 }
             })
+            
+        /*
+         * IF USER CLICKS LOG OUT
+         */
         } else {
+            
             PFUser.logOut()
             var currentUser = PFUser.currentUser()
             self.username.text = "Please Sign In"
