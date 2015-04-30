@@ -120,7 +120,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         switch buttonIndex {
-        case 0:
+        case 1:
             driveRecorder.saveRecording({ (completed, error) -> Void in
                 // delay resetting drive...
                 self.driveRecorder.resetDrive()

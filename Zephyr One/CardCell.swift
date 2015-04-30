@@ -13,6 +13,7 @@ class CardCell: PFTableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var trackImage: UIImageView!
@@ -36,11 +37,11 @@ class CardCell: PFTableViewCell {
         cardView.alpha = 1
         cardView.layer.masksToBounds = false
         cardView.layer.cornerRadius = 2
-        cardView.layer.shadowOffset = CGSize(width: -0.4, height: 0.4)
-        cardView.layer.shadowRadius = 1
+//        cardView.layer.shadowOffset = CGSize(width: -0.4, height: 0.4)
+//        cardView.layer.shadowRadius = 1
         
         let path = UIBezierPath(rect: cardView.bounds)
-        cardView.layer.shadowPath = path.CGPath
-        cardView.layer.shadowOpacity = 0.2
+//        cardView.layer.shadowPath = path.CGPath
+//        cardView.layer.shadowOpacity = 0.2
     }
 }
