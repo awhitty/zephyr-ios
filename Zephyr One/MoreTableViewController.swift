@@ -31,10 +31,15 @@ class MoreTableViewController: UITableViewController {
     }
 
     @IBOutlet weak var FacebookConnectedLabel: UILabel!
+    @IBOutlet weak var CarConnectedLabel: UILabel!
     override func viewDidAppear(animated: Bool) {
         var currentUser = PFUser.currentUser()
         if currentUser != nil {
             self.FacebookConnectedLabel.text = currentUser!["name"] as! String?
+            var carText = currentUser!["carYear"] as! String?
+            var carText2 = currentUser!["carBrand"] as! String?
+            var carText3 = currentUser!["carModel"] as! String?
+            self.CarConnectedLabel.text = carText! + " " + carText2! + " " + carText3!
         } else {
             self.FacebookConnectedLabel.text = "Sign In"
         }
