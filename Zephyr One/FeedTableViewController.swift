@@ -37,11 +37,11 @@ class FeedTableViewController: PFQueryTableViewController {
     }
     
     override func queryForTable() -> PFQuery {
-        var query = PFQuery(className: "Drive")
+        var query = Drive.query()
         
-        query.orderByDescending("createdAt")
+        query!.orderByDescending("createdAt")
         
-        return query
+        return query!
     }
     
     @IBAction func feedModeChanged(sender: UISegmentedControl) {
@@ -51,8 +51,14 @@ class FeedTableViewController: PFQueryTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Card") as! CardCell
         
-        cell.titleLabel.text = object["user"] as? String
-        cell.subtitleLabel.text = object["carDescription"] as? String
+        let drive: Drive = object as! Drive
+        
+        println(drive)
+        
+        cell.titleLabel.text = drive.user
+        cell.subtitleLabel.text = drive.carDescription
+        
+        cell.distanceLabel.text = NSString(format: "%.2f meters", drive.driveData.distance) as String
 
         if let date = object.createdAt {
             let dateFormatter = NSDateFormatter()

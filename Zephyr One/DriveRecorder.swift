@@ -56,6 +56,8 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         timer.invalidate()
         
+        drive.driveData.endTime = NSDate()
+        
         // need to save the recorded data...
     }
     
@@ -64,8 +66,22 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
     }
     
     func resetDrive() {
+        let user = PFUser.currentUser()
+        
         drive = Drive(className: "Drive")
         drive.trackName = "Test track"
+        drive.user = "Anonymous"
+        drive.carDescription = "Unknown car"
+        
+        if user != nil {
+            if let name = user!["name"] {
+                drive.user = name as! String
+            }
+            
+            if let carBrand = user!["carBrand"] {
+                drive.carDescription = carBrand as! String
+            }
+        }
         
         delegate?.tick(NSDate(timeIntervalSince1970: 0.0), speed: 0.0)
     }
