@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class DriveViewController: UIViewController {
+class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDelegate, DriveRecorderDelegate {
+    
+    // MARK: - View life cycle
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,65 +26,120 @@ class DriveViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        driveRecorder = DriveRecorder()
+        driveRecorder.delegate = self
+        
+        mapView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        driveRecorder.checkLocationAuthorization()
     }
     
-    @IBOutlet weak var curTrackTitle: UILabel!
-    @IBOutlet weak var curSpeed: UILabel!
-    @IBOutlet weak var lastLapTime: UILabel!
-    @IBOutlet weak var SWDisplay: UILabel!
+    // MARK: - Map view
     
-    var startTime = NSTimeInterval()
-  
-    func updateTime() {
-       
-        var currentTime = NSDate.timeIntervalSinceReferenceDate()
+    @IBOutlet weak var mapView: MKMapView!
+    
+    func mapRegion() -> MKCoordinateRegion {
+        let location = self.driveRecorder.drive.driveData.trackPoints.last!
         
-        //Find the difference between current time and start time.
-        var elapsedTime: NSTimeInterval = (currentTime - startTime)
-        
-        //calculate the minutes in elapsed time.
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        //calculate the seconds in elapsed time.
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        //find out the fraction of milliseconds to be displayed.
-        let fraction = UInt8(elapsedTime * 100)
-        
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
-        let strMinutes = minutes > 9 ? String(minutes):"0" + String(minutes)
-        let strSeconds = seconds > 9 ? String(seconds):"0" + String(seconds)
-        let strFraction = fraction > 9 ? String(fraction):"0" + String(fraction)
-        
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-        SWDisplay.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        return MKCoordinateRegionMakeWithDistance(location.coordinate, 20, 20)
     }
     
-    var timer = NSTimer()
-    @IBAction func startSW(sender: AnyObject) {
-        if !timer.valid {
-            let aSelector : Selector = "updateTime"
-            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate()
+    func loadMap() {
+        if self.driveRecorder.drive.driveData.trackPoints.count > 0 {
+            self.mapView.region = mapRegion()
+            self.mapView.addOverlay(self.polyLine())
         }
     }
     
-    @IBAction func stopSW(sender: AnyObject) {
-        timer.invalidate()
-//        timer == nil
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            var polyline = overlay as! MKPolyline
+            var renderer = MKPolylineRenderer(polyline: polyline)
+            renderer.strokeColor = UIColor.blueColor()
+            renderer.lineWidth = 3
+            return renderer
+        }
+        
+        return nil
+    }
+    
+    func polyLine() -> MKPolyline {
+        var coords = driveRecorder.drive.driveData.trackPoints.map { $0.coordinate }
+        coords.reserveCapacity(driveRecorder.drive.driveData.trackPoints.count)
+        
+        return MKPolyline(coordinates: &coords, count: coords.count)
+    }
+    
+    // MARK: - Drive recorder delegate
+    
+    func tick(elapsedTime: NSDate, speed: Double) {
+        var timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss.SSS"
+        timeFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        
+        timeLabel.text = timeFormatter.stringFromDate(elapsedTime)
+        
+        
+        speedLabel.text = NSString(format: "%.2f mph", speed) as String
+        
+        loadMap()
+    }
+    
+    // MARK: - Data logging
+    
+    var driveRecorder: DriveRecorder!
+    
+    // MARK: - Interface controls
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
+    @IBOutlet weak var lastLapLabel: UILabel!
+    
+    @IBOutlet weak var startStopButton: UIButton!
+    
+    @IBAction func toggleRecording(sender: UIButton) {
+        if !driveRecorder.recording {
+            driveRecorder.startRecording()
+            sender.setTitle("Stop recording", forState: UIControlState.Normal)
+        } else {
+            driveRecorder.stopRecording()
+            
+            let actionSheet = UIActionSheet(title: "Would you like to save your drive?", delegate: self, cancelButtonTitle: "Discard drive", destructiveButtonTitle: nil, otherButtonTitles: "Save drive")
+            
+            actionSheet.actionSheetStyle = UIActionSheetStyle.Default
+            actionSheet.showInView(self.view)
+            
+            sender.setTitle("Start recording", forState: UIControlState.Normal)
+        }
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 0:
+            driveRecorder.saveRecording({ (completed, error) -> Void in
+                // delay resetting drive...
+                self.driveRecorder.resetDrive()
+                
+                if error != nil {
+                    let alertController = UIAlertController(title: "Error saving drive", message: "Your drive could not be saved.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            })
+            break
+        default:
+            driveRecorder.resetDrive()
+        }
+    }
+    
+    func displayLocationAuthorizationWarning() {
+        // TODO: Implement this warning message
+        // Should say something about how to enable location services in settings
     }
     
     /*

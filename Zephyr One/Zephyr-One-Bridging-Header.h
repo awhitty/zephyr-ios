@@ -12,8 +12,8 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "IonIcons.h"
-#import "GGTabBar.h"
-#import "GGTabBarAppearanceKeys.h"
-#import "GGTabBarController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 #endif

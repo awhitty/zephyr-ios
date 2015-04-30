@@ -43,6 +43,10 @@ class FeedTableViewController: PFQueryTableViewController {
         
         return query
     }
+    
+    @IBAction func feedModeChanged(sender: UISegmentedControl) {
+    }
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject!) -> PFTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Card") as! CardCell
@@ -58,4 +62,5 @@ class FeedTableViewController: PFQueryTableViewController {
         
         return cell
     }
+    
 }
