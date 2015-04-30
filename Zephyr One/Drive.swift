@@ -38,16 +38,14 @@ class Drive: PFObject, PFSubclassing {
     }
     
     func saveWithData() {
-        driveDataStore.save()
+        let file = PFFile(data: NSKeyedArchiver.archivedDataWithRootObject(driveData))
         
-        self.save()
-//        driveDataStore.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
-//            if succeeded {
-//                self.saveInBackground()
-//            } else {
-//                println(error)
-//            }
-//        }
+        file.saveInBackgroundWithBlock { (completed, error) -> Void in
+            if completed {
+                self.driveDataStore = file
+                self.saveInBackground()
+            }
+        }
     }
     
     override class func initialize() {
