@@ -11,6 +11,7 @@ import Foundation
 class MoreLoginController: UIViewController {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var profilePictureView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,14 @@ class MoreLoginController: UIViewController {
         if currentUser != nil {
             self.username.text = currentUser!["name"] as! String?
             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
+            
+            let image = currentUser!["profilePicture"] as! PFFile?
+            image?.getDataInBackgroundWithBlock({ (imageData, error) -> Void in
+                if error == nil {
+                    let image = UIImage(data:imageData!)
+                    self.profilePictureView.image = image
+                }
+            })
             
         } else {
             self.username.text = "Please Sign In"
@@ -83,7 +92,7 @@ class MoreLoginController: UIViewController {
                                     var picture = PFFile(data: data)
                                     println(picture)
                                     user.setObject(picture, forKey: "profilePicture")
-                                    // user.saveInBackground()
+                                    user.saveInBackground()
                                 }
                                 else {
                                     println("Error: \(error.localizedDescription)")

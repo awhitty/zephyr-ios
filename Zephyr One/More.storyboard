@@ -113,6 +113,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="More" id="gBK-MP-VnJ"/>
                     <connections>
+                        <outlet property="FacebookConnectedLabel" destination="EdX-e1-f3r" id="Tyw-h5-H6P"/>
                         <outlet property="FacebookLoginCell" destination="DD8-qa-VZa" id="5M8-KR-4sz"/>
                     </connections>
                 </tableViewController>
@@ -148,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xei-Bw-H87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1246" y="3728"/>
+            <point key="canvasLocation" x="1289" y="3308"/>
         </scene>
         <!--More Login Controller-->
         <scene sceneID="OEA-TZ-KY5">
@@ -177,23 +178,55 @@
                                     <action selector="signInPressed:" destination="tAk-yu-LcB" eventType="touchUpInside" id="54v-w8-bxb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-MZ-vor">
+                                <rect key="frame" x="180" y="117" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="iPU-9F-rtK" secondAttribute="centerX" id="BeD-E8-cMb"/>
                             <constraint firstItem="f5Q-uE-P52" firstAttribute="centerX" secondItem="iPU-9F-rtK" secondAttribute="centerX" id="Cwn-jz-7cA"/>
+                            <constraint firstItem="f5Q-uE-P52" firstAttribute="top" secondItem="fOj-MZ-vor" secondAttribute="bottom" constant="40" id="Qef-bJ-T5y"/>
                             <constraint firstItem="f5Q-uE-P52" firstAttribute="top" secondItem="iPU-9F-rtK" secondAttribute="bottom" constant="11" id="Sb5-aS-xH7"/>
+                            <constraint firstAttribute="centerY" secondItem="fOj-MZ-vor" secondAttribute="centerY" constant="119" id="XJ7-AX-gin"/>
                             <constraint firstAttribute="centerY" secondItem="iPU-9F-rtK" secondAttribute="centerY" constant="36.5" id="h1I-PO-WqJ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profilePictureView" destination="fOj-MZ-vor" id="Alo-V5-oS8"/>
                         <outlet property="signInButton" destination="f5Q-uE-P52" id="XDL-tI-eb7"/>
                         <outlet property="username" destination="iPU-9F-rtK" id="QRI-pA-glc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vw0-QL-GJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="4223"/>
+            <point key="canvasLocation" x="1289" y="3712"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="AAE-YB-9tM">
+            <objects>
+                <tableViewController id="kxi-nB-3nd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8Q9-di-oZT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WZX-C4-g8W">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WZX-C4-g8W" id="VcJ-81-Tw8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kxi-nB-3nd" id="OUl-dl-TQu"/>
+                            <outlet property="delegate" destination="kxi-nB-3nd" id="oxP-sQ-MLh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqG-Ss-9nb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1289" y="4386"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="erM-Yx-QDa">

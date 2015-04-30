@@ -17,7 +17,7 @@ class MoreTableViewController: UITableViewController {
         
         let selected = IonIcons.imageWithIcon(ion_ios_more, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
-        self.tabBarItem = UITabBarItem(title: "Drive", image: normal, selectedImage: selected)
+        self.tabBarItem = UITabBarItem(title: "Settings", image: normal, selectedImage: selected)
     }
 
     override func viewDidLoad() {
@@ -30,6 +30,16 @@ class MoreTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBOutlet weak var FacebookConnectedLabel: UILabel!
+    override func viewDidAppear(animated: Bool) {
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.FacebookConnectedLabel.text = currentUser!["name"] as! String?
+        } else {
+            self.FacebookConnectedLabel.text = "Sign In"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
