@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol DriveRecorderDelegate {
     // called every 100th of a second
-    func tick(time: NSDate, location: CLLocation);
+    func tick(elapsedTime: NSDate, location: CLLocation, speed: Double);
 }
 
 class DriveRecorder: NSObject, CLLocationManagerDelegate {
@@ -24,6 +24,9 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
     
     var timer: NSTimer!
     
+    // used for tick
+    var speed: Double?
+    
     override init() {
         super.init()
         
@@ -33,6 +36,7 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         
         drive = Drive(className: "Drive")
         drive.trackName = "Test track"
+        
     }
     
     // MARK: - Start and stop
@@ -42,6 +46,8 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         
         locationManager.startUpdatingLocation()
         
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: Selector("tick"), userInfo: nil, repeats: true)
+        
         drive.driveData.startTime = NSDate()
     }
     
@@ -49,14 +55,38 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         recording = false
         
         locationManager.stopUpdatingLocation()
+        timer.invalidate()
         drive.saveWithData()
         
         
         // need to save the recorded data...
     }
     
+    // MARK: - Tempo
+    
+    func tick() {
+        if delegate != nil {
+            var distance: Double?
+            
+            let currentTime = NSDate()
+            let interval = currentTime.timeIntervalSinceDate(drive.driveData.startTime)
+            let timerDate = NSDate(timeIntervalSince1970: interval)
+            
+            var convertedSpeed: Double!
+            if speed != nil {
+                // speed to mph
+                convertedSpeed = speed! / 1609.344 * 3600
+            } else {
+                convertedSpeed = 0.0
+            }
+            
+            delegate?.tick(timerDate, location: locationManager.location, speed: convertedSpeed)
+        }
+    }
+    
     // MARK: - Location manager delegate
     
+    // Review: Do we still need this?
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedAlways || status == CLAuthorizationStatus.AuthorizedWhenInUse {
             
@@ -66,8 +96,14 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         for newLocation in locations {
             if newLocation.horizontalAccuracy < 20 {
-                if locations.count > 0 {
-                    drive.driveData.distance += newLocation.distanceFromLocation(drive.driveData.trackPoints.last)
+                if drive.driveData.trackPoints.count > 0 {
+                    let previousLocation = drive.driveData.trackPoints.last!
+                    
+                    let tempDistance = newLocation.distanceFromLocation(previousLocation)
+                    drive.driveData.distance += tempDistance
+                    
+                    // speed is in meters/second?
+                    speed = tempDistance / newLocation.timestamp!.timeIntervalSinceDate(previousLocation.timestamp)
                 }
                 
                 drive.driveData.trackPoints.append(newLocation as! CLLocation)

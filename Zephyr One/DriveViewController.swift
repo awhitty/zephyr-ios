@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DriveViewController: UIViewController, CLLocationManagerDelegate {
+class DriveViewController: UIViewController, DriveRecorderDelegate {
     
     // MARK: - View life cycle
 
@@ -26,10 +26,24 @@ class DriveViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         driveRecorder = DriveRecorder()
+        driveRecorder.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Drive recorder delegate
+    
+    func tick(elapsedTime: NSDate, location: CLLocation, speed: Double) {
+        var timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss.SSS"
+        timeFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        
+        timeLabel.text = timeFormatter.stringFromDate(elapsedTime)
+        
+        
+        speedLabel.text = NSString(format: "%.2f mph", speed) as String
     }
     
     // MARK: - Data logging
