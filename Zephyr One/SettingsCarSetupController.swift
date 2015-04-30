@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsCarSetupController: UITableViewController {
+class SettingsCarSetupController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,49 @@ class SettingsCarSetupController: UITableViewController {
         //         self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+   
+    
+    @IBOutlet weak var carBrandLabel: UITextField!
+    @IBOutlet weak var carModelLabel: UITextField!
+    @IBOutlet weak var carYearLabel: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+
+    
     override func viewDidAppear(animated: Bool) {
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.saveButton.setTitle("Save", forState: UIControlState.Normal)
+            if currentUser!["carBrand"] != nil {
+                self.carBrandLabel.text = currentUser!["carBrand"] as! String?
+            } else {
+                self.carBrandLabel.placeholder = "Enter Car Manufacturer"
+            }
+            if currentUser!["carModel"] != nil {
+                self.carModelLabel.text = currentUser!["carModel"] as! String?
+            } else {
+                self.carModelLabel.placeholder = "Enter Car Model"
+            }
+            if currentUser!["carYear"] != nil {
+                self.carYearLabel.text = currentUser!["carYear"] as! String?
+            } else {
+                self.carYearLabel.placeholder = "Enter Car Year"
+            }
+        } else {
+            self.saveButton.setTitle("Please Sign In", forState: UIControlState.Normal)
+        }
     }
     
-
+    
+    @IBAction func carBrandSaved(sender: AnyObject) {
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            currentUser!["carBrand"] = self.carBrandLabel.text
+            currentUser!["carModel"] = self.carModelLabel.text
+            currentUser!["carYear"] = self.carYearLabel.text
+            currentUser!.saveInBackground()
+            self.saveButton.setTitle("Saved", forState: UIControlState.Normal)
+        }
+    }
 }
+
+
