@@ -48,6 +48,7 @@
 		EBA1D32D1AF04DAD00317338 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */; };
 		EBA1D32E1AF04DAD00317338 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */; };
 		EBA1D3301AF04E9A00317338 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */; };
+		EBE3EAC41AF27E7F00AE1331 /* SettingsCarSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCarSetupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				D94458C91AD73BC800E234F5 /* More.storyboard */,
+				EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */,
 				EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */,
 				D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */,
 			);
@@ -456,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */,
+				EBE3EAC41AF27E7F00AE1331 /* SettingsCarSetupController.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
 				D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */,
