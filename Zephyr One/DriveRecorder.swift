@@ -11,7 +11,7 @@ import CoreLocation
 
 protocol DriveRecorderDelegate {
     // called every 100th of a second
-    func tick(elapsedTime: NSDate, location: CLLocation, speed: Double);
+    func tick(elapsedTime: NSDate, speed: Double);
 }
 
 class DriveRecorder: NSObject, CLLocationManagerDelegate {
@@ -34,8 +34,7 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = CLActivityType.AutomotiveNavigation
         
-        drive = Drive(className: "Drive")
-        drive.trackName = "Test track"
+        resetDrive()
         
     }
     
@@ -56,23 +55,30 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         timer.invalidate()
-        drive.saveWithData(nil)
-        
         
         // need to save the recorded data...
+    }
+    
+    func saveRecording(block: PFBooleanResultBlock?) {
+        drive.saveWithData(block)
+    }
+    
+    func resetDrive() {
+        drive = Drive(className: "Drive")
+        drive.trackName = "Test track"
+        
+        delegate?.tick(NSDate(timeIntervalSince1970: 0.0), speed: 0.0)
     }
     
     // MARK: - Tempo
     
     func tick() {
         if delegate != nil {
-            var distance: Double?
-            
             let currentTime = NSDate()
             let interval = currentTime.timeIntervalSinceDate(drive.driveData.startTime)
             let timerDate = NSDate(timeIntervalSince1970: interval)
             
-            var convertedSpeed: Double!
+            var convertedSpeed: Double
             if speed != nil {
                 // speed to mph
                 convertedSpeed = speed! / 1609.344 * 3600
@@ -80,7 +86,7 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
                 convertedSpeed = 0.0
             }
             
-            delegate?.tick(timerDate, location: locationManager.location, speed: convertedSpeed)
+            delegate?.tick(timerDate, speed: convertedSpeed)
         }
     }
     

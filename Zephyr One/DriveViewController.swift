@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class DriveViewController: UIViewController, MKMapViewDelegate, DriveRecorderDelegate {
+class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDelegate, DriveRecorderDelegate {
     
     // MARK: - View life cycle
 
@@ -35,6 +35,8 @@ class DriveViewController: UIViewController, MKMapViewDelegate, DriveRecorderDel
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        driveRecorder.checkLocationAuthorization()
     }
     
     // MARK: - Map view
@@ -42,27 +44,40 @@ class DriveViewController: UIViewController, MKMapViewDelegate, DriveRecorderDel
     @IBOutlet weak var mapView: MKMapView!
     
     func mapRegion() -> MKCoordinateRegion {
-        var region = MKCoordinateRegion()
-        
         let location = self.driveRecorder.drive.driveData.trackPoints.last!
         
-        region.center = location.coordinate
-        region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-        
-        return region
+        return MKCoordinateRegionMakeWithDistance(location.coordinate, 20, 20)
     }
     
     func loadMap() {
         if self.driveRecorder.drive.driveData.trackPoints.count > 0 {
             self.mapView.region = mapRegion()
+            self.mapView.addOverlay(self.polyLine())
         }
     }
     
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is MKPolyline {
+            var polyline = overlay as! MKPolyline
+            var renderer = MKPolylineRenderer(polyline: polyline)
+            renderer.strokeColor = UIColor.blueColor()
+            renderer.lineWidth = 3
+            return renderer
+        }
+        
+        return nil
+    }
     
+    func polyLine() -> MKPolyline {
+        var coords = driveRecorder.drive.driveData.trackPoints.map { $0.coordinate }
+        coords.reserveCapacity(driveRecorder.drive.driveData.trackPoints.count)
+        
+        return MKPolyline(coordinates: &coords, count: coords.count)
+    }
     
     // MARK: - Drive recorder delegate
     
-    func tick(elapsedTime: NSDate, location: CLLocation, speed: Double) {
+    func tick(elapsedTime: NSDate, speed: Double) {
         var timeFormatter = NSDateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss.SSS"
         timeFormatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
@@ -93,7 +108,32 @@ class DriveViewController: UIViewController, MKMapViewDelegate, DriveRecorderDel
             sender.setTitle("Stop recording", forState: UIControlState.Normal)
         } else {
             driveRecorder.stopRecording()
+            
+            let actionSheet = UIActionSheet(title: "Would you like to save your drive?", delegate: self, cancelButtonTitle: "Discard drive", destructiveButtonTitle: nil, otherButtonTitles: "Save drive")
+            
+            actionSheet.actionSheetStyle = UIActionSheetStyle.Default
+            actionSheet.showInView(self.view)
+            
             sender.setTitle("Start recording", forState: UIControlState.Normal)
+        }
+    }
+    
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        switch buttonIndex {
+        case 0:
+            driveRecorder.saveRecording({ (completed, error) -> Void in
+                // delay resetting drive...
+                self.driveRecorder.resetDrive()
+                
+                if error != nil {
+                    let alertController = UIAlertController(title: "Error saving drive", message: "Your drive could not be saved.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            })
+            break
+        default:
+            driveRecorder.resetDrive()
         }
     }
     
