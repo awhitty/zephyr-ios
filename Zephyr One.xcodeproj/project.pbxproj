@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */; };
+		A714D84B19DADC60416C8B6D /* libPods-Zephyr One.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28747FBBFD786559FD460824 /* libPods-Zephyr One.a */; };
 		D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D92570291AD8B8B50037A7AE /* Parse.framework */; };
 		D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702A1AD8B8B50037A7AE /* ParseUI.framework */; };
 		D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */; };
@@ -43,8 +43,12 @@
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
 		D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */; };
-		D9D2EA2E1AF24981008CBCC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
+		EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */; };
+		EBA1D32D1AF04DAD00317338 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */; };
+		EBA1D32E1AF04DAD00317338 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */; };
+		EBA1D3301AF04E9A00317338 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */; };
+		EBE3EAC41AF27E7F00AE1331 /* SettingsCarSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28747FBBFD786559FD460824 /* libPods-Zephyr One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zephyr One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8027D7D892A301398224ABA /* Pods-Zephyr One.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.release.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.release.xcconfig"; sourceTree = "<group>"; };
-		BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zephyr One.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BBD8B74A3B5F11EC8A251E /* Pods-Zephyr One.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zephyr One.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Zephyr One/Pods-Zephyr One.debug.xcconfig"; sourceTree = "<group>"; };
 		D92570291AD8B8B50037A7AE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D925702A1AD8B8B50037A7AE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -101,8 +105,12 @@
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
 		D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDataPoint.swift; sourceTree = "<group>"; };
-		D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoginController.swift; sourceTree = "<group>"; };
+		EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCarSetupController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +118,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D2EA2E1AF24981008CBCC3 /* MapKit.framework in Frameworks */,
 				D92570481AD8B9E70037A7AE /* Accounts.framework in Frameworks */,
 				D92570461AD8B9D00037A7AE /* Social.framework in Frameworks */,
+				EBA1D3301AF04E9A00317338 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				EBA1D32E1AF04DAD00317338 /* FBSDKLoginKit.framework in Frameworks */,
+				EBA1D32D1AF04DAD00317338 /* FBSDKCoreKit.framework in Frameworks */,
 				D92570441AD8B96F0037A7AE /* Bolts.framework in Frameworks */,
 				D92570421AD8B9330037A7AE /* libz.dylib in Frameworks */,
 				D92570401AD8B92A0037A7AE /* libsqlite3.dylib in Frameworks */,
@@ -126,7 +136,7 @@
 				D925702E1AD8B8D80037A7AE /* AudioToolbox.framework in Frameworks */,
 				D925702C1AD8B8B50037A7AE /* ParseUI.framework in Frameworks */,
 				D925702B1AD8B8B50037A7AE /* Parse.framework in Frameworks */,
-				A6E3C58C8F9DC698FC9FC48B /* libPods-Zephyr One.a in Frameworks */,
+				A714D84B19DADC60416C8B6D /* libPods-Zephyr One.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +162,9 @@
 		C77A0FF65832694390DD081F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */,
+				EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */,
+				EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */,
+				EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */,
 				D92570471AD8B9E70037A7AE /* Accounts.framework */,
 				D92570451AD8B9CF0037A7AE /* Social.framework */,
 				D92570431AD8B96F0037A7AE /* Bolts.framework */,
@@ -168,7 +180,7 @@
 				D925702D1AD8B8D80037A7AE /* AudioToolbox.framework */,
 				D92570291AD8B8B50037A7AE /* Parse.framework */,
 				D925702A1AD8B8B50037A7AE /* ParseUI.framework */,
-				BCF95B475AAD676ECDC5A3AB /* libPods-Zephyr One.a */,
+				28747FBBFD786559FD460824 /* libPods-Zephyr One.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -290,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				D94458C91AD73BC800E234F5 /* More.storyboard */,
+				EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */,
+				EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */,
 				D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */,
 			);
 			name = More;
@@ -445,9 +459,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */,
+				EBE3EAC41AF27E7F00AE1331 /* SettingsCarSetupController.swift in Sources */,
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
 				D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */,
+				EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */,
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
 				D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */,
