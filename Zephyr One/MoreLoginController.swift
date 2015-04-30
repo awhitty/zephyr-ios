@@ -30,7 +30,7 @@ class MoreLoginController: UIViewController {
         var currentUser = PFUser.currentUser()
     
         if currentUser != nil {
-//            self.username.text = currentUser!["name"] as! String?
+            self.username.text = currentUser!["name"] as! String?
             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
         
         } else {
@@ -97,12 +97,14 @@ class MoreLoginController: UIViewController {
                             user.saveEventually()
 //                            currentUser = PFUser.currentUser()
                             
-//                            let name = result["name"]
-//                            self.username.text = name as! String?
+                            let name = result["name"]
+                            self.username.text = name as! String?
                             
                             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
                             self.isSignedIn = true;
 
+                        } else {
+                            
                         }
                     })
                     
