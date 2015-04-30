@@ -20,7 +20,10 @@ class DriveData: NSObject, NSCoding {
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(trackPoints, forKey: "points")
+        aCoder.encodeObject(startTime, forKey: "start")
+        aCoder.encodeObject(endTime, forKey: "end")
         
+        aCoder.encodeDouble(distance, forKey: "distance")
     }
     
     override init() {
@@ -29,5 +32,9 @@ class DriveData: NSObject, NSCoding {
     
     required init(coder aDecoder: NSCoder) {
         self.trackPoints = aDecoder.decodeObjectForKey("points") as! [CLLocation]
+        self.startTime   = aDecoder.decodeObjectForKey("start") as! NSDate
+        self.endTime     = aDecoder.decodeObjectForKey("end") as! NSDate
+        
+        self.distance    = aDecoder.decodeDoubleForKey("distance")
     }
 }
