@@ -43,6 +43,7 @@
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
 		D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */; };
+		D9D2EA2E1AF24981008CBCC3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
 		D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDataPoint.swift; sourceTree = "<group>"; };
+		D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D2EA2E1AF24981008CBCC3 /* MapKit.framework in Frameworks */,
 				D92570481AD8B9E70037A7AE /* Accounts.framework in Frameworks */,
 				D92570461AD8B9D00037A7AE /* Social.framework in Frameworks */,
 				D92570441AD8B96F0037A7AE /* Bolts.framework in Frameworks */,
@@ -149,6 +152,7 @@
 		C77A0FF65832694390DD081F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9D2EA2D1AF24981008CBCC3 /* MapKit.framework */,
 				D92570471AD8B9E70037A7AE /* Accounts.framework */,
 				D92570451AD8B9CF0037A7AE /* Social.framework */,
 				D92570431AD8B96F0037A7AE /* Bolts.framework */,

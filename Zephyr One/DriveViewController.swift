@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class DriveViewController: UIViewController, DriveRecorderDelegate {
+class DriveViewController: UIViewController, MKMapViewDelegate, DriveRecorderDelegate {
     
     // MARK: - View life cycle
 
@@ -27,11 +29,36 @@ class DriveViewController: UIViewController, DriveRecorderDelegate {
         
         driveRecorder = DriveRecorder()
         driveRecorder.delegate = self
+        
+        mapView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    // MARK: - Map view
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
+    func mapRegion() -> MKCoordinateRegion {
+        var region = MKCoordinateRegion()
+        
+        let location = self.driveRecorder.drive.driveData.trackPoints.last!
+        
+        region.center = location.coordinate
+        region.span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        
+        return region
+    }
+    
+    func loadMap() {
+        if self.driveRecorder.drive.driveData.trackPoints.count > 0 {
+            self.mapView.region = mapRegion()
+        }
+    }
+    
+    
     
     // MARK: - Drive recorder delegate
     
@@ -44,6 +71,8 @@ class DriveViewController: UIViewController, DriveRecorderDelegate {
         
         
         speedLabel.text = NSString(format: "%.2f mph", speed) as String
+        
+        loadMap()
     }
     
     // MARK: - Data logging

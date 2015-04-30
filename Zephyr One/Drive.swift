@@ -37,13 +37,13 @@ class Drive: PFObject, PFSubclassing {
         }
     }
     
-    func saveWithData() {
+    func saveWithData(block: PFBooleanResultBlock?) {
         let file = PFFile(data: NSKeyedArchiver.archivedDataWithRootObject(driveData))
         
         file.saveInBackgroundWithBlock { (completed, error) -> Void in
             if completed {
                 self.driveDataStore = file
-                self.saveInBackground()
+                self.saveInBackgroundWithBlock(block)
             }
         }
     }

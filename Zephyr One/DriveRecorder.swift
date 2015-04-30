@@ -56,7 +56,7 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         
         locationManager.stopUpdatingLocation()
         timer.invalidate()
-        drive.saveWithData()
+        drive.saveWithData(nil)
         
         
         // need to save the recorded data...
