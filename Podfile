@@ -5,6 +5,7 @@ target 'Zephyr One' do
     pod 'ionicons'
     pod 'RBStoryboardLink'
     pod 'GGTabBar', '~> 0.0.2'
+    pod 'RETableViewManager', '~> 1.6'
 end
 
 target 'Zephyr OneTests' do
