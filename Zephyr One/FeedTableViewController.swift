@@ -9,10 +9,9 @@
 import UIKit
 import Parse
 import Bolts
+import Parse
 
 class FeedTableViewController: PFQueryTableViewController {
-    
-    var drives = ["First drive...", "Second drive"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +23,7 @@ class FeedTableViewController: PFQueryTableViewController {
     }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         self.tableView.separatorColor = UIColor.clearColor()
@@ -34,6 +34,14 @@ class FeedTableViewController: PFQueryTableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "FeedTableView"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "FeedTableView"])
     }
     
     override func queryForTable() -> PFQuery {
@@ -53,8 +61,6 @@ class FeedTableViewController: PFQueryTableViewController {
         
         let drive: Drive = object as! Drive
         
-        println(drive)
-        
         cell.titleLabel.text = drive.user
         cell.subtitleLabel.text = drive.carDescription
         
@@ -67,6 +73,22 @@ class FeedTableViewController: PFQueryTableViewController {
         }
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destination = segue.destinationViewController as? UIViewController
+        
+        if let navCon = destination as? UINavigationController {
+            destination = navCon.visibleViewController
+        }
+        
+        if let flatDriveView = destination as? FeedDriveViewController {
+            
+            if let cell = sender as? UITableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)
+                flatDriveView.drive = objectAtIndexPath(indexPath) as! Drive
+            }
+        }
     }
     
 }

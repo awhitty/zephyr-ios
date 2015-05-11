@@ -29,6 +29,11 @@ class MoreTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidDisappear(animated: Bool) {
+        PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "MoreTableView"])
+    }
+    
 
     @IBOutlet weak var FacebookConnectedLabel: UILabel!
     @IBOutlet weak var CarConnectedLabel: UILabel!
@@ -43,6 +48,9 @@ class MoreTableViewController: UITableViewController {
         } else {
             self.FacebookConnectedLabel.text = "Sign In"
         }
+        
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "MoreTableView"])
+
     }
     
     override func didReceiveMemoryWarning() {

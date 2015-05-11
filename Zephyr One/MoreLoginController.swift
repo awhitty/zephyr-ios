@@ -46,6 +46,12 @@ class MoreLoginController: UIViewController {
             self.signInButton.setTitle("Sign in", forState: UIControlState.Normal)
             isSignedIn = false;
         }
+        
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "MoreLoginView"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "MoreLoginView"])
     }
     
     @IBAction func signInPressed(sender: UIButton) {

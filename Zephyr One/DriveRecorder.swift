@@ -121,14 +121,15 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
                 if drive.driveData.trackPoints.count > 0 {
                     let previousLocation = drive.driveData.trackPoints.last!
                     
-                    let tempDistance = newLocation.distanceFromLocation(previousLocation)
+                    let tempDistance = newLocation.distanceFromLocation(previousLocation.location)
                     drive.driveData.distance += tempDistance
                     
                     // speed is in meters/second?
                     speed = tempDistance / newLocation.timestamp!.timeIntervalSinceDate(previousLocation.timestamp)
                 }
                 
-                drive.driveData.trackPoints.append(newLocation as! CLLocation)
+                let newPoint = DriveDataPoint(time: newLocation.timestamp, location: newLocation as! CLLocation, speed: speed ?? 0)
+                drive.driveData.trackPoints.append(newPoint)
             }
         }
     }

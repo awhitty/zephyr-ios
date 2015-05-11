@@ -50,6 +50,12 @@ class SettingsCarSetupController: UIViewController {
         } else {
             self.saveButton.setTitle("Please Sign In", forState: UIControlState.Normal)
         }
+        
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "SettingsCarSetupView"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "SettingsCarSetupView"])
     }
     
     

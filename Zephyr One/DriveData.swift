@@ -15,9 +15,11 @@ class DriveData: NSObject, NSCoding {
     
     var distance = 0.0
     
-    var trackPoints = [CLLocation]()
+    var trackPoints = [DriveDataPoint]()
     // todo: what else?
     
+    
+    // MARK: - NSCoding bits
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(trackPoints, forKey: "points")
         aCoder.encodeObject(startTime, forKey: "start")
@@ -31,7 +33,7 @@ class DriveData: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.trackPoints = aDecoder.decodeObjectForKey("points") as! [CLLocation]
+        self.trackPoints = aDecoder.decodeObjectForKey("points") as! [DriveDataPoint]
         self.startTime   = aDecoder.decodeObjectForKey("start") as! NSDate
         self.endTime     = aDecoder.decodeObjectForKey("end") as! NSDate
         

@@ -31,49 +31,27 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         driveRecorder.delegate = self
         
         mapView.delegate = self
+        
+        flatViewManager = FlatDriveViewManager()
+        flatViewManager.mapView = mapView
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         driveRecorder.checkLocationAuthorization()
+        
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "DriveView"])
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "DriveView"])
     }
     
     // MARK: - Map view
     
     @IBOutlet weak var mapView: MKMapView!
-    
-    func mapRegion() -> MKCoordinateRegion {
-        let location = self.driveRecorder.drive.driveData.trackPoints.last!
-        
-        return MKCoordinateRegionMakeWithDistance(location.coordinate, 20, 20)
-    }
-    
-    func loadMap() {
-        if self.driveRecorder.drive.driveData.trackPoints.count > 0 {
-            self.mapView.region = mapRegion()
-            self.mapView.addOverlay(self.polyLine())
-        }
-    }
-    
-    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if overlay is MKPolyline {
-            var polyline = overlay as! MKPolyline
-            var renderer = MKPolylineRenderer(polyline: polyline)
-            renderer.strokeColor = UIColor.blueColor()
-            renderer.lineWidth = 3
-            return renderer
-        }
-        
-        return nil
-    }
-    
-    func polyLine() -> MKPolyline {
-        var coords = driveRecorder.drive.driveData.trackPoints.map { $0.coordinate }
-        coords.reserveCapacity(driveRecorder.drive.driveData.trackPoints.count)
-        
-        return MKPolyline(coordinates: &coords, count: coords.count)
-    }
+    var flatViewManager: FlatDriveViewManager!
     
     // MARK: - Drive recorder delegate
     
@@ -87,7 +65,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         
         speedLabel.text = NSString(format: "%.2f mph", speed) as String
         
-        loadMap()
+        flatViewManager.trackPoints = self.driveRecorder.drive.driveData.trackPoints
     }
     
     // MARK: - Data logging

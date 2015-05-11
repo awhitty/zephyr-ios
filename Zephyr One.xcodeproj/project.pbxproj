@@ -43,6 +43,8 @@
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
 		D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */; };
+		D9E79FBA1AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */; };
+		D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
 		EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */; };
 		EBA1D32D1AF04DAD00317338 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */; };
@@ -105,6 +107,8 @@
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
 		D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDataPoint.swift; sourceTree = "<group>"; };
+		D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatDriveViewManager.swift; sourceTree = "<group>"; };
+		D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDriveViewController.swift; sourceTree = "<group>"; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoginController.swift; sourceTree = "<group>"; };
 		EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -274,6 +278,7 @@
 				D9C2FBFB1AE709F100330CF5 /* Drive.swift */,
 				D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */,
 				D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */,
+				D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				D94458CB1AD73C3A00E234F5 /* Feed.storyboard */,
 				D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */,
 				D9FDDA3E1AD75839004C7131 /* CardCell.swift */,
+				D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -463,6 +469,8 @@
 				D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */,
 				D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */,
 				D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */,
+				D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */,
+				D9E79FBA1AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift in Sources */,
 				EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */,
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
