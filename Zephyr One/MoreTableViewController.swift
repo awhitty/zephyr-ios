@@ -17,7 +17,7 @@ class MoreTableViewController: UITableViewController {
         
         let selected = IonIcons.imageWithIcon(ion_ios_more, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
-        self.tabBarItem = UITabBarItem(title: "Settings", image: normal, selectedImage: selected)
+        self.tabBarItem = UITabBarItem(title: "Profile", image: normal, selectedImage: selected)
     }
 
     override func viewDidLoad() {

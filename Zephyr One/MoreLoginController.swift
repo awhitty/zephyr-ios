@@ -33,13 +33,20 @@ class MoreLoginController: UIViewController {
             self.username.text = currentUser!["name"] as! String?
             self.signInButton.setTitle("Sign out", forState: UIControlState.Normal)
             
-            let image = currentUser!["profilePicture"] as! PFFile?
-            image?.getDataInBackgroundWithBlock({ (imageData, error) -> Void in
+            let userImageFile = currentUser!["profilePicture"] as? PFFile
+            userImageFile!.getDataInBackgroundWithBlock {
+                (imageData: NSData?, error: NSError?) -> Void in
                 if error == nil {
-                    let image = UIImage(data:imageData!)
-                    self.profilePictureView.image = image
+                    if let imageData = imageData {
+                        let image = UIImage(data:imageData)
+                        self.profilePictureView.image = image
+                        println(self.profilePictureView.image) // nil
+                        println(UIImage(data:imageData)) // nil
+                        println("image data is \(imageData)") // stuff
+                        println(image) // nil
+                    }
                 }
-            })
+            }
             
         } else {
             self.username.text = "Please Sign In"
@@ -90,15 +97,23 @@ class MoreLoginController: UIViewController {
                             /*
                              * SETTING PROFILE PICTURE
                              */
-                            let pictureURL = "https://graph.facebook.com/\(facebookId)/picture?type=large&return_ssl_resources=1"
+//                            let pictureURL = "https://graph.facebook.com/\(facebookId)/picture?type=large&return_ssl_resources=1"
+                            var pictureURL = "https://graph.facebook.com/"
+                            pictureURL += facebookId as! String
+                            pictureURL += "/picture?type=large&return_ssl_resources=1"
+                            
                             var URLRequest = NSURL(string: pictureURL)
                             var URLRequestNeeded = NSURLRequest(URL: URLRequest!)
                             NSURLConnection.sendAsynchronousRequest(URLRequestNeeded, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!,data: NSData!, error: NSError!) -> Void in
                                 if error == nil {
-                                    var picture = PFFile(data: data)
-                                    println(picture)
+                                    let picture = PFFile(data: data)
                                     user.setObject(picture, forKey: "profilePicture")
+                                    println(picture)
+                                    println(data)
+//                                    user["profilePicture"] = picture
                                     user.saveInBackground()
+                                    
+                            
                                 }
                                 else {
                                     println("Error: \(error.localizedDescription)")

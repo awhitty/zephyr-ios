@@ -47,6 +47,7 @@
 		D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
 		EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */; };
+		EB9CA3DC1B0219F8008BB4C3 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9CA3DB1B0219F8008BB4C3 /* ProfileTableViewController.swift */; };
 		EBA1D32D1AF04DAD00317338 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */; };
 		EBA1D32E1AF04DAD00317338 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */; };
 		EBA1D3301AF04E9A00317338 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */; };
@@ -111,6 +112,7 @@
 		D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDriveViewController.swift; sourceTree = "<group>"; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoginController.swift; sourceTree = "<group>"; };
+		EB9CA3DB1B0219F8008BB4C3 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		EBA1D32B1AF04DAD00317338 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		EBA1D32C1AF04DAD00317338 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		EBA1D32F1AF04E9A00317338 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				D94458C91AD73BC800E234F5 /* More.storyboard */,
+				EB9CA3DB1B0219F8008BB4C3 /* ProfileTableViewController.swift */,
 				EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */,
 				EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */,
 				D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */,
@@ -471,6 +474,7 @@
 				D9C2FBFA1AE709A600330CF5 /* DriveRecorder.swift in Sources */,
 				D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */,
 				D9E79FBA1AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift in Sources */,
+				EB9CA3DC1B0219F8008BB4C3 /* ProfileTableViewController.swift in Sources */,
 				EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */,
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
