@@ -16,6 +16,7 @@ class Drive: PFObject, PFSubclassing {
     @NSManaged var trackName: String
     @NSManaged var carDescription: String
     @NSManaged var driveDataStore: PFFile
+    @NSManaged var facebookId: String
     var driveDataPrimitive: DriveData?
     
     var driveData: DriveData {

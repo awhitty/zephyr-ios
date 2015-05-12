@@ -72,6 +72,7 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
         drive.trackName = "Test track"
         drive.user = "Anonymous"
         drive.carDescription = "Unknown car"
+        drive.facebookId = "Unknown id"
         
         if user != nil {
             if let name = user!["name"] {
@@ -80,6 +81,10 @@ class DriveRecorder: NSObject, CLLocationManagerDelegate {
             
             if let carBrand = user!["carBrand"] {
                 drive.carDescription = carBrand as! String
+            }
+            
+            if let facebookId = user!["facebookId"] {
+                drive.facebookId = facebookId as! String
             }
         }
         
