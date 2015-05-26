@@ -43,6 +43,7 @@
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
 		D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */; };
+		D9C962311B13CAA100DF02C9 /* EditCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C962301B13CAA100DF02C9 /* EditCarTableViewController.swift */; };
 		D9E79FBA1AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */; };
 		D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */; };
 		D9FDDA3F1AD75839004C7131 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDDA3E1AD75839004C7131 /* CardCell.swift */; };
@@ -108,6 +109,7 @@
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
 		D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveDataPoint.swift; sourceTree = "<group>"; };
+		D9C962301B13CAA100DF02C9 /* EditCarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCarTableViewController.swift; sourceTree = "<group>"; };
 		D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatDriveViewManager.swift; sourceTree = "<group>"; };
 		D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedDriveViewController.swift; sourceTree = "<group>"; };
 		D9FDDA3E1AD75839004C7131 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				EBE3EAC31AF27E7F00AE1331 /* SettingsCarSetupController.swift */,
 				EB2547451AF0C8F800E93BFF /* MoreLoginController.swift */,
 				D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */,
+				D9C962301B13CAA100DF02C9 /* EditCarTableViewController.swift */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
 				D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */,
+				D9C962311B13CAA100DF02C9 /* EditCarTableViewController.swift in Sources */,
 				D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */,
 				D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */,
 				D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */,

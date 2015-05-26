@@ -8,7 +8,13 @@
 
 import UIKit
 
-class MoreTableViewController: UITableViewController {
+class MoreTableViewController: UITableViewController, RETableViewManagerDelegate {
+    
+    var manager: RETableViewManager!
+    
+    var facebookConnectSection: RETableViewSection!
+    var facebookSection: RETableViewSection!
+    var carListSection: RETableViewSection!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,98 +28,134 @@ class MoreTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.title = "Profile"
+        
+        self.manager = RETableViewManager(tableView: self.tableView, delegate: self)
+        
+        if PFUser.currentUser() == nil {
+            facebookConnectSection = addFacebookConnect()
+        } else {
+            facebookSection = addFacebookSection()
+            carListSection = addCarListSection()
+            refreshCars()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "MoreTableView"])
     }
     
     override func viewDidDisappear(animated: Bool) {
         PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "MoreTableView"])
     }
     
-
-    @IBOutlet weak var FacebookConnectedLabel: UILabel!
-    @IBOutlet weak var CarConnectedLabel: UILabel!
-    override func viewDidAppear(animated: Bool) {
-        var currentUser = PFUser.currentUser()
-        if currentUser != nil {
-            self.FacebookConnectedLabel.text = currentUser!["name"] as! String?
-            var carText = currentUser!["carYear"] as! String?
-            var carText2 = currentUser!["carBrand"] as! String?
-            var carText3 = currentUser!["carModel"] as! String?
-            self.CarConnectedLabel.text = carText! + " " + carText2! + " " + carText3!
-        } else {
-            self.FacebookConnectedLabel.text = "Sign In"
+    func addFacebookConnect() -> RETableViewSection {
+        var section = RETableViewSection(headerTitle: "Connect with Facebook")
+        self.manager.addSection(section)
+        
+        var signInButton = RETableViewItem(title: "Sign in", accessoryType: UITableViewCellAccessoryType.None) { (item) -> Void in
+            item.deselectRowAnimated(true)
+            PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: { (user, error) -> Void in
+                if let user = user {
+                    if user.isNew {
+                        // set up new user
+                    }
+                    
+                    self.facebookSection = self.addFacebookSection()
+                    self.carListSection = self.addCarListSection()
+                    self.manager.removeSection(self.facebookConnectSection)
+                    
+                    self.tableView.reloadData()
+                } else {
+                    let alert = UIAlertController(title: "Error signing in", message: "Please try signing in through Facebook again in order to connect your account.", preferredStyle: UIAlertControllerStyle.Alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+            })
         }
         
-        PFAnalytics.trackEvent("viewAppeared", dimensions: ["viewName": "MoreTableView"])
-
+        section.addItem(signInButton)
+        
+        return section
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func addFacebookSection() -> RETableViewSection {
+        var section = RETableViewSection(headerTitle: "Facebook")
+        self.manager.addSection(section)
+        
+        let user = PFUser.currentUser()
+        
+        // name
+        let fullname = user!["name"] as! String
+        var name = RETextItem(title: "Name", value: fullname)
+        section.addItem(name)
+        
+        var signOutButton = RETableViewItem(title: "Sign out", accessoryType: UITableViewCellAccessoryType.None) { (item) -> Void in
+            item.deselectRowAnimated(true)
+            
+            PFUser.logOutInBackgroundWithBlock({ (error) -> Void in
+                // FIXME: some error things are happening in here
+                self.facebookConnectSection = self.addFacebookConnect()
+                
+                self.manager.removeSection(self.facebookSection)
+                self.manager.removeSection(self.carListSection)
+                
+                self.tableView.reloadData()
+            })
+        }
+        
+        name.style = UITableViewCellStyle.Value2
+        name.enabled = false
+        
+        section.addItem(signOutButton)
+        
+        return section
     }
-
-    @IBOutlet weak var FacebookLoginCell: UITableViewCell!
-
     
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    func addCarListSection() -> RETableViewSection {
+        var section = RETableViewSection(headerTitle: "Cars")
+        self.manager.addSection(section)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("refreshCars"), name: "Car updated", object: nil)
+        
+        return section
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    func refreshCars() {
+        
+        carListSection.removeAllItems()
+        
+        let user = PFUser.currentUser()
+        
+        var query = PFQuery(className: "Car")
+        query.whereKey("owner", equalTo: user!.username!)
+        
+        query.findObjectsInBackgroundWithBlock { (cars, error) -> Void in
+            if error == nil && cars != nil {
+                for car in cars! as! [PFObject] {
+                    // convert keys to strings to index without quote hell
+                    let year = "year"
+                    let make = "make"
+                    let model = "model"
+                    self.carListSection.addItem(RETableViewItem(title: "\(car[year]!) \(car[make]!) \(car[model]!)", accessoryType: UITableViewCellAccessoryType.DisclosureIndicator, selectionHandler: { (item) -> Void in
+                        let carController = EditCarTableViewController()
+                        carController.car = car
+                        self.navigationController?.pushViewController(carController, animated: true)
+                    }))
+                }
+            }
+            
+            self.carListSection.addItem(RETableViewItem(title: "Add a car", accessoryType: UITableViewCellAccessoryType.DisclosureIndicator, selectionHandler: { (item) -> Void in
+                let carController = EditCarTableViewController()
+                //                self.presentViewController(carController, animated: true, completion: nil)
+                self.navigationController?.pushViewController(carController, animated: true)
+            }))
+            
+            self.carListSection.reloadSectionWithAnimation(UITableViewRowAnimation.Automatic)
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
