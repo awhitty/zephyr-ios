@@ -13,6 +13,10 @@ import Parse
 
 class FeedTableViewController: PFQueryTableViewController {
     
+    @IBOutlet weak var feedFilterControl: UISegmentedControl!
+    
+    var friendList = [String]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,13 +31,22 @@ class FeedTableViewController: PFQueryTableViewController {
         super.viewDidLoad()
         
         self.tableView.separatorColor = UIColor.clearColor()
-//        self.tableView.rowHeight = UITableViewAutomaticDimension;
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        FBSDKGraphRequest(graphPath: "/me/friends", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+            if error == nil {
+                var resultdict = result as! NSDictionary
+                var data : NSArray = result.objectForKey("data") as! NSArray
+                
+                for d in data {
+                    let value = d as! NSDictionary
+                    self.friendList.append(value.objectForKey("id") as! String)
+                }
+            }
+            
+            if self.feedFilterControl.selectedSegmentIndex == 1 {
+                self.loadObjects()
+            }
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -49,10 +62,30 @@ class FeedTableViewController: PFQueryTableViewController {
         
         query!.orderByDescending("createdAt")
         
+        switch feedFilterControl.selectedSegmentIndex {
+        case 0:
+            if let user = PFUser.currentUser() {
+                query?.whereKey("facebookId", equalTo: user["facebookId"]!)
+            }
+            break
+        case 1:
+            if let user = PFUser.currentUser() {
+                query?.whereKey("facebookId", containedIn: friendList)
+            }
+            break
+        default:
+            break
+        }
+        
         return query!
     }
     
     @IBAction func feedModeChanged(sender: UISegmentedControl) {
+        if self.objects?.count > 0 {
+            self.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        }
+        
+        self.loadObjects()
     }
     
 

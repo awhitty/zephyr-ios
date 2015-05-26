@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5D6-4i-edb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5D6-4i-edb">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -41,7 +41,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="A483E278-6F3F-40F9-9603-8720FFEE277F" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-xI-81K">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EA9F7D3A-17B7-4FD5-A03A-FCB60D2737A4" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-xI-81K">
                                                     <rect key="frame" x="8" y="8" width="64" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="9NV-HJ-Iyd"/>
@@ -130,8 +130,8 @@
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
-                                <segment title="You" enabled="NO"/>
-                                <segment title="Friends" enabled="NO"/>
+                                <segment title="You"/>
+                                <segment title="Friends"/>
                                 <segment title="Everyone"/>
                             </segments>
                             <connections>
@@ -142,6 +142,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="parseClassName" value="Drive"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="feedFilterControl" destination="Oa9-Dz-1WQ" id="csc-mW-IHv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05K-3T-w6N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -199,7 +202,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A483E278-6F3F-40F9-9603-8720FFEE277F" width="861" height="821">
+        <image name="EA9F7D3A-17B7-4FD5-A03A-FCB60D2737A4" width="861" height="821">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

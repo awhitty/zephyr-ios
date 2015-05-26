@@ -60,7 +60,7 @@ class MoreTableViewController: UITableViewController, RETableViewManagerDelegate
             PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: { (user, error) -> Void in
                 if let user = user {
                     if user.isNew {
-                        // set up new user
+                        // TODO: reintroduce fb code to set up new user
                     }
                     
                     self.facebookSection = self.addFacebookSection()
