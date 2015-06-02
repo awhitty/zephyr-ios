@@ -25,15 +25,8 @@ class FlatDriveViewManager: NSObject, MKMapViewDelegate {
 
     func updateUI() {
         if trackPoints.count > 1 {
-            self.mapView.region = mapRegion()
             self.mapView.addOverlay(self.polyLine())
         }
-    }
-    
-    func mapRegion() -> MKCoordinateRegion {
-        let point = trackPoints[trackPoints.count - 1]
-        
-        return MKCoordinateRegionMakeWithDistance(point.location.coordinate, 20, 20)
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
