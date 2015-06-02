@@ -16,5 +16,6 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "RETableViewManager.h"
+#import "RETableViewOptionsController.h"
 
 #endif

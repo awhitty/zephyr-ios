@@ -190,8 +190,11 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
             stopRecording()
             let saveController = SaveDriveTableViewController()
             saveController.drive = drive
-            self.navigationController?.pushViewController(saveController, animated: true)
-
+            
+            let navCon = UINavigationController(rootViewController: saveController)
+            navCon.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+            
+            self.presentViewController(navCon, animated: true, completion: nil)
         }
     }
 }
