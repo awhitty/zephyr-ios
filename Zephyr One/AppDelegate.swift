@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("qfRVrmFmcd1xE3SsbzREcsvJTOqMJJsxFlT7yK3Q", clientKey: "Fjt2TVT7DIHfhIQWVg1LhVmh2xH9feUAF4VVXtgU")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        window?.tintColor = "#FF4C2D".UIColor
         return true
     }
     
