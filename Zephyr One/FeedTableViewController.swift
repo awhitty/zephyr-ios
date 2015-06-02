@@ -22,7 +22,7 @@ class FeedTableViewController: PFQueryTableViewController {
         
         let normal = IonIcons.imageWithIcon(ion_ios_paper_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
-        let selected = IonIcons.imageWithIcon(ion_ios_paper, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let selected = IonIcons.imageWithIcon(ion_ios_paper, iconColor: "#FF4C2D".UIColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         self.tabBarItem = UITabBarItem(title: "Feed", image: normal, selectedImage: selected)
     }
 
@@ -94,16 +94,19 @@ class FeedTableViewController: PFQueryTableViewController {
         
         let drive: Drive = object as! Drive
         
-        cell.titleLabel.text = drive.user
-        cell.subtitleLabel.text = drive.carDescription
-        
-        cell.distanceLabel.text = NSString(format: "%.2f meters", drive.driveData.distance) as String
-
-        if let date = object.createdAt {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-            cell.dateLabel.text = dateFormatter.stringFromDate(date)
-        }
+        cell.titleLabel.text = drive.trackName
+        cell.subtitleLabel.text = drive.user["name"] as? String
+        cell.statsLabel.text = "\(drive.driveData.distance)"
+        cell.driveManager.trackPoints = drive.driveData.trackPoints
+        cell.driveManager.zoomToDrive()
+//
+//        cell.distanceLabel.text = NSString(format: "%.2f meters", drive.driveData.distance) as String
+//
+//        if let date = object.createdAt {
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+//            cell.dateLabel.text = dateFormatter.stringFromDate(date)
+//        }
         
         return cell
     }

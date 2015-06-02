@@ -24,6 +24,7 @@ class FeedDriveViewController: UIViewController {
         flatDriveView.mapView = mapView
         
         flatDriveView.trackPoints = drive.driveData.trackPoints
+        flatDriveView.zoomToDrive()
     }
     
     override func viewDidAppear(animated: Bool) {

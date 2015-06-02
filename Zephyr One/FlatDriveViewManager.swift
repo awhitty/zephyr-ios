@@ -29,6 +29,10 @@ class FlatDriveViewManager: NSObject, MKMapViewDelegate {
         }
     }
     
+    func zoomToDrive() {
+        mapView.setVisibleMapRect(polyLine().boundingMapRect, edgePadding: UIEdgeInsets(top: 80, left: 80, bottom: 80, right: 80), animated: true)
+    }
+    
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is MKPolyline {
             var polyline = overlay as! MKPolyline

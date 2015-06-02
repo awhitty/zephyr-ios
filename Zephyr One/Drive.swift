@@ -12,9 +12,10 @@ import CoreLocation
 
 class Drive: PFObject, PFSubclassing {
     
-    @NSManaged var user: String
+    @NSManaged var user: PFUser
     @NSManaged var trackName: String
-    @NSManaged var carDescription: String
+    @NSManaged var car: PFObject?
+    @NSManaged var roadCondition: String
     @NSManaged var driveDataStore: PFFile
     @NSManaged var facebookId: String
     var driveDataPrimitive: DriveData?

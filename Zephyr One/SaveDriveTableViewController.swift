@@ -13,6 +13,9 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
     var manager: RETableViewManager!
     var drive: Drive!
     
+    
+    // info section
+    var infoSection: RETableViewSection!
     var trackTitle: RETextItem!
     var roadConditions: RESegmentedItem!
     var notes: RELongTextItem!
@@ -40,7 +43,7 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Discard", style: .Plain, target: self, action: Selector("confirmCancel"))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("validateAndSave"))
         
-        addInfoSection()
+        infoSection = addInfoSection()
 //        addDriveDataSection()
     }
     
@@ -48,8 +51,8 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
         var section = RETableViewSection()
         self.manager.addSection(section)
         
-        var trackTitle = RETextItem(title: "Track title", value: nil, placeholder: "Laguna Seca")
-        var roadConditions = RESegmentedItem(title: "Road conditions", segmentedControlTitles: ["Dry", "Wet"], value: 0)
+        trackTitle = RETextItem(title: "Track title", value: nil, placeholder: "Laguna Seca")
+        roadConditions = RESegmentedItem(title: "Road conditions", segmentedControlTitles: ["Dry", "Wet"], value: 0)
         var car = RERadioItem(title: "Car", value: nil) { (item) -> Void in
             item.deselectRowAnimated(true)
             
@@ -76,8 +79,10 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
             self.navigationController?.pushViewController(optionsController, animated: true)
             
         }
-        var notes = RELongTextItem(value: nil, placeholder: "Drive notes")
+        notes = RELongTextItem(value: nil, placeholder: "Drive notes")
         notes.cellHeight = 88
+        
+        trackTitle.validators = ["presence"]
         
         section.addItem(trackTitle)
         section.addItem(roadConditions)
@@ -87,16 +92,35 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
         return section
     }
     
+    func validateAndSave() {
+        if self.manager.errors.count > 0 {
+            let errorString = self.manager.errors.map({ $0.localizedDescription }).reduce("", combine: { "\($0) \n \($1)" })
+            let alert = UIAlertController(title: "Please fix these errors", message: errorString, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            drive.trackName = trackTitle.value
+            drive.user = PFUser.currentUser()!
+            drive.car = selectedCar
+            drive.roadCondition = ["Dry", "Wet"][roadConditions.value]
+            drive.facebookId = PFUser.currentUser()!["facebookId"] as! String
+            
+            drive.saveWithData({ (completed, error) -> Void in
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            })
+            // We want to navigate to a drive view with the drive info from here
+        }
+    }
+    
     func confirmCancel() {
         let alert = UIAlertController(title: "Please confirm", message: "Are you sure you would like to discard your drive?", preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Discard drive", style: UIAlertActionStyle.Destructive, handler: nil))
+        alert.addAction(UIAlertAction(title: "Discard drive", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            // TODO: Need to discard the drive here and notify view controller
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        }))
         
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func validateAndSave() {
-        // this is where
     }
 }

@@ -25,7 +25,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
     override func awakeFromNib() {
         super.awakeFromNib()
         let normal = IonIcons.imageWithIcon(ion_ios_circle_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
-        let selected = IonIcons.imageWithIcon(ion_ios_circle_filled, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let selected = IonIcons.imageWithIcon(ion_ios_circle_filled, iconColor: "#FF4C2D".UIColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         self.tabBarItem = UITabBarItem(title: "Drive", image: normal, selectedImage: selected)
     }
 

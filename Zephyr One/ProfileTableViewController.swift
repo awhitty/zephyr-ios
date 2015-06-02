@@ -15,7 +15,7 @@ class ProfileTableViewController: UITableViewController {
         
         let normal = IonIcons.imageWithIcon(ion_ios_more_outline, iconColor: UIColor.grayColor(), iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
-        let selected = IonIcons.imageWithIcon(ion_ios_more, iconColor: self.view.tintColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
+        let selected = IonIcons.imageWithIcon(ion_ios_more, iconColor: "#FF4C2D".UIColor, iconSize: 32, imageSize: CGSize(width: 32, height: 32))
         
         
     }
