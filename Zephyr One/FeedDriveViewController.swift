@@ -25,6 +25,9 @@ class FeedDriveViewController: UIViewController {
         
         flatDriveView.trackPoints = drive.driveData.trackPoints
         flatDriveView.zoomToDrive()
+        
+        self.title = drive.trackName
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: Selector("shareDrive"))
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -34,9 +37,8 @@ class FeedDriveViewController: UIViewController {
     override func viewDidDisappear(animated: Bool) {
         PFAnalytics.trackEvent("viewDisappeared", dimensions: ["viewName": "FeedDriveView"])
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func shareDrive() {
+        // bring up action sheet to let user share the drive... somehow?
     }
 }

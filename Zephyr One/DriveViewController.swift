@@ -119,7 +119,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         
         locationManager.startUpdatingLocation()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.001, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("timerTick"), userInfo: nil, repeats: true)
         
         drive.driveData.startTime = NSDate()
     }

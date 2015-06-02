@@ -44,7 +44,7 @@ class CardCell: PFTableViewCell {
         cardView.alpha = 1
         cardView.layer.masksToBounds = false
         cardView.layer.cornerRadius = 3
-        cardView.layer.borderColor = "#ddd".CGColor
+        cardView.layer.borderColor = "#aaa".CGColor
         cardView.layer.borderWidth = 1.0
 //        cardView.layer.shadowOffset = CGSize(width: 0, height: 0.8)
 //        cardView.layer.shadowRadius = 2
