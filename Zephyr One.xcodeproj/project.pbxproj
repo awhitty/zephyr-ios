@@ -41,6 +41,10 @@
 		D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D21AD747CE00E234F5 /* MainViewController.swift */; };
 		D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */; };
 		D96852F31B26E014003874D2 /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96852F21B26E014003874D2 /* MulticolorPolylineSegment.swift */; };
+		D96852F61B26ECAF003874D2 /* 3DView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96852F51B26ECAF003874D2 /* 3DView.storyboard */; };
+		D96852F81B26ED1B003874D2 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96852F71B26ED1B003874D2 /* GameViewController.swift */; };
+		D96852FA1B26ED55003874D2 /* TrackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96852F91B26ED55003874D2 /* TrackListTableViewController.swift */; };
+		D96852FC1B26EE0F003874D2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D96852FB1B26EE0F003874D2 /* art.scnassets */; };
 		D99F90291B1D715F00F9ED7B /* SaveDriveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F90281B1D715F00F9ED7B /* SaveDriveTableViewController.swift */; };
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
@@ -109,6 +113,10 @@
 		D94458D21AD747CE00E234F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		D96852F21B26E014003874D2 /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
+		D96852F51B26ECAF003874D2 /* 3DView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 3DView.storyboard; sourceTree = "<group>"; };
+		D96852F71B26ED1B003874D2 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D96852F91B26ED55003874D2 /* TrackListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackListTableViewController.swift; sourceTree = "<group>"; };
+		D96852FB1B26EE0F003874D2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		D99F90281B1D715F00F9ED7B /* SaveDriveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveDriveTableViewController.swift; sourceTree = "<group>"; };
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
@@ -331,6 +339,10 @@
 		D96852F41B26E8D7003874D2 /* 3D View */ = {
 			isa = PBXGroup;
 			children = (
+				D96852FB1B26EE0F003874D2 /* art.scnassets */,
+				D96852F71B26ED1B003874D2 /* GameViewController.swift */,
+				D96852F51B26ECAF003874D2 /* 3DView.storyboard */,
+				D96852F91B26ED55003874D2 /* TrackListTableViewController.swift */,
 			);
 			name = "3D View";
 			sourceTree = "<group>";
@@ -426,12 +438,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96852F61B26ECAF003874D2 /* 3DView.storyboard in Resources */,
 				D94458C61AD7372800E234F5 /* Podfile in Resources */,
 				D92E2A091AD734D700B926B1 /* .gitignore in Resources */,
 				D94458CC1AD73C3A00E234F5 /* Feed.storyboard in Resources */,
 				D94458CA1AD73BC800E234F5 /* More.storyboard in Resources */,
 				D92E29E71AD72EF000B926B1 /* LaunchScreen.xib in Resources */,
 				D92E29E41AD72EF000B926B1 /* Images.xcassets in Resources */,
+				D96852FC1B26EE0F003874D2 /* art.scnassets in Resources */,
 				D92E29FD1AD72F0700B926B1 /* Main.storyboard in Resources */,
 				D94458C81AD7391100E234F5 /* Drive.storyboard in Resources */,
 			);
@@ -491,6 +505,8 @@
 				D9E79FBC1AFD788600ECFDF1 /* FeedDriveViewController.swift in Sources */,
 				D9E79FBA1AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift in Sources */,
 				EB9CA3DC1B0219F8008BB4C3 /* ProfileTableViewController.swift in Sources */,
+				D96852FA1B26ED55003874D2 /* TrackListTableViewController.swift in Sources */,
+				D96852F81B26ED1B003874D2 /* GameViewController.swift in Sources */,
 				EB2547461AF0C8F800E93BFF /* MoreLoginController.swift in Sources */,
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,

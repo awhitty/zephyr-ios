@@ -170,6 +170,8 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
             sender.setTitle("Stop recording", forState: UIControlState.Normal)
         } else {
             stopRecording()
+            sender.setTitle("Start recording", forState: UIControlState.Normal)
+            
             let saveController = SaveDriveTableViewController()
             saveController.drive = drive
             

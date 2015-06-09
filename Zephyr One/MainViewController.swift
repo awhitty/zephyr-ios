@@ -26,7 +26,10 @@ class MainViewController: UITabBarController {
         let more = UIStoryboard(name: "More", bundle: nil)
         let moreVC = more.instantiateInitialViewController() as! UIViewController
         
-        self.viewControllers = [feedVC, driveVC, moreVC]
+        let threed = UIStoryboard(name: "3DView", bundle: nil)
+        let threedVC = threed.instantiateInitialViewController() as! UIViewController
+        
+        self.viewControllers = [feedVC, driveVC, threedVC, moreVC]
     }
 
     override func didReceiveMemoryWarning() {
