@@ -104,6 +104,7 @@ class SaveDriveTableViewController: UITableViewController, RETableViewManagerDel
             drive.car = selectedCar
             drive.roadCondition = ["Dry", "Wet"][roadConditions.value]
             drive.facebookId = PFUser.currentUser()!["facebookId"] as! String
+            drive.notes = notes.value
             
             drive.saveWithData({ (completed, error) -> Void in
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)

@@ -31,6 +31,7 @@
 		D92E29F31AD72EF000B926B1 /* Zephyr_OneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29F21AD72EF000B926B1 /* Zephyr_OneTests.swift */; };
 		D92E29FD1AD72F0700B926B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92E29FC1AD72F0700B926B1 /* Main.storyboard */; };
 		D92E2A091AD734D700B926B1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D92E2A081AD734D700B926B1 /* .gitignore */; };
+		D93837891B243779003F36DC /* FeedMapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93837881B243779003F36DC /* FeedMapDetailViewController.swift */; };
 		D94458C61AD7372800E234F5 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D94458C51AD7372800E234F5 /* Podfile */; };
 		D94458C81AD7391100E234F5 /* Drive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94458C71AD7391100E234F5 /* Drive.storyboard */; };
 		D94458CA1AD73BC800E234F5 /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94458C91AD73BC800E234F5 /* More.storyboard */; };
@@ -39,6 +40,7 @@
 		D94458D11AD7446200E234F5 /* DriveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D01AD7446200E234F5 /* DriveViewController.swift */; };
 		D94458D31AD747CE00E234F5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D21AD747CE00E234F5 /* MainViewController.swift */; };
 		D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */; };
+		D96852F31B26E014003874D2 /* MulticolorPolylineSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96852F21B26E014003874D2 /* MulticolorPolylineSegment.swift */; };
 		D99F90291B1D715F00F9ED7B /* SaveDriveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99F90281B1D715F00F9ED7B /* SaveDriveTableViewController.swift */; };
 		D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFB1AE709F100330CF5 /* Drive.swift */; };
 		D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */; };
@@ -96,6 +98,7 @@
 		D92E29F21AD72EF000B926B1 /* Zephyr_OneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zephyr_OneTests.swift; sourceTree = "<group>"; };
 		D92E29FC1AD72F0700B926B1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D92E2A081AD734D700B926B1 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D93837881B243779003F36DC /* FeedMapDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedMapDetailViewController.swift; sourceTree = "<group>"; };
 		D94458C51AD7372800E234F5 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		D94458C71AD7391100E234F5 /* Drive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Drive.storyboard; sourceTree = "<group>"; };
 		D94458C91AD73BC800E234F5 /* More.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = More.storyboard; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		D94458D01AD7446200E234F5 /* DriveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveViewController.swift; sourceTree = "<group>"; };
 		D94458D21AD747CE00E234F5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D94458D41AD74D6600E234F5 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
+		D96852F21B26E014003874D2 /* MulticolorPolylineSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorPolylineSegment.swift; sourceTree = "<group>"; };
 		D99F90281B1D715F00F9ED7B /* SaveDriveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveDriveTableViewController.swift; sourceTree = "<group>"; };
 		D9C2FBFB1AE709F100330CF5 /* Drive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drive.swift; sourceTree = "<group>"; };
 		D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveData.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 		D92E29FE1AD730E900B926B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D96852F41B26E8D7003874D2 /* 3D View */,
 				D92E2A001AD730F800B926B1 /* Common */,
 				D92E29FF1AD730F200B926B1 /* Main */,
 				D92E2A021AD7310300B926B1 /* Feed */,
@@ -283,6 +288,7 @@
 				D9C2FBFD1AE70D8900330CF5 /* DriveData.swift */,
 				D9C2FC001AE7144100330CF5 /* DriveDataPoint.swift */,
 				D9E79FB91AFD6CCB00ECFDF1 /* FlatDriveViewManager.swift */,
+				D96852F21B26E014003874D2 /* MulticolorPolylineSegment.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -301,9 +307,10 @@
 			isa = PBXGroup;
 			children = (
 				D94458CB1AD73C3A00E234F5 /* Feed.storyboard */,
-				D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */,
 				D9FDDA3E1AD75839004C7131 /* CardCell.swift */,
+				D94458CD1AD73ECA00E234F5 /* FeedTableViewController.swift */,
 				D9E79FBB1AFD788600ECFDF1 /* FeedDriveViewController.swift */,
+				D93837881B243779003F36DC /* FeedMapDetailViewController.swift */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -319,6 +326,13 @@
 				D9C962301B13CAA100DF02C9 /* EditCarTableViewController.swift */,
 			);
 			name = More;
+			sourceTree = "<group>";
+		};
+		D96852F41B26E8D7003874D2 /* 3D View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "3D View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,9 +495,11 @@
 				D925704A1AD8E35F0037A7AE /* Hexes.swift in Sources */,
 				D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */,
 				D99F90291B1D715F00F9ED7B /* SaveDriveTableViewController.swift in Sources */,
+				D96852F31B26E014003874D2 /* MulticolorPolylineSegment.swift in Sources */,
 				D9C2FBFC1AE709F100330CF5 /* Drive.swift in Sources */,
 				D9C962311B13CAA100DF02C9 /* EditCarTableViewController.swift in Sources */,
 				D94458CE1AD73ECA00E234F5 /* FeedTableViewController.swift in Sources */,
+				D93837891B243779003F36DC /* FeedMapDetailViewController.swift in Sources */,
 				D9C2FBFE1AE70D8900330CF5 /* DriveData.swift in Sources */,
 				D9C2FC011AE7144100330CF5 /* DriveDataPoint.swift in Sources */,
 				D94458D51AD74D6600E234F5 /* MoreTableViewController.swift in Sources */,

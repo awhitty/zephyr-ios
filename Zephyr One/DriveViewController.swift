@@ -70,19 +70,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         if recording {
             for newLocation in locations {
                 if newLocation.horizontalAccuracy < 20 {
-                    // FIXME: decompose this into a separate function for adding a location to a drive
-                    if drive.driveData.trackPoints.count > 0 {
-                        let previousLocation = drive.driveData.trackPoints.last!
-                        
-                        let tempDistance = newLocation.distanceFromLocation(previousLocation.location)
-                        drive.driveData.distance += tempDistance
-                        
-                        // speed is in meters/second?
-                        speed = tempDistance / newLocation.timestamp!.timeIntervalSinceDate(previousLocation.timestamp)
-                    }
-                    
-                    let newPoint = DriveDataPoint(time: newLocation.timestamp, location: newLocation as! CLLocation, speed: speed ?? 0)
-                    drive.driveData.trackPoints.append(newPoint)
+                    drive.driveData.addPoint(newLocation as! CLLocation)
                 }
             }
         }
@@ -129,15 +117,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         let interval = currentTime.timeIntervalSinceDate(drive.driveData.startTime)
         let timerDate = NSDate(timeIntervalSince1970: interval)
             
-        var convertedSpeed: Double
-        if speed != nil {
-            // speed to mph
-            convertedSpeed = speed! / 1609.344 * 3600
-        } else {
-            convertedSpeed = 0.0
-        }
-            
-        tick(timerDate, speed: convertedSpeed)
+        tick(timerDate, speed: drive.driveData.lastRecordedSpeed)
     }
     
     func stopRecording() {
@@ -169,7 +149,9 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
         timeLabel.text = timeFormatter.stringFromDate(elapsedTime)
         
         
-        speedLabel.text = NSString(format: "%.2f mph", speed) as String
+        speedLabel.text = NSString(format: "%.2f mph", speed.mph) as String
+        
+        accelerationLabel.text = NSString(format: "%.2f g", drive.driveData.trackPoints.last?.acceleration.g ?? 0.0) as String
         
         flatViewManager.trackPoints = drive.driveData.trackPoints
     }
@@ -178,7 +160,7 @@ class DriveViewController: UIViewController, UIActionSheetDelegate, MKMapViewDel
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var speedLabel: UILabel!
-    @IBOutlet weak var lastLapLabel: UILabel!
+    @IBOutlet weak var accelerationLabel: UILabel!
     
     @IBOutlet weak var startStopButton: UIButton!
     

@@ -96,7 +96,7 @@ class FeedTableViewController: PFQueryTableViewController {
         
         cell.titleLabel.text = drive.trackName
         cell.subtitleLabel.text = drive.user["name"] as? String
-        cell.statsLabel.text = "\(drive.driveData.distance)"
+        cell.statsLabel.text = NSString(format: "%.2f miles", drive.driveData.distance.miles) as String
         cell.driveManager.trackPoints = drive.driveData.trackPoints
         cell.driveManager.zoomToDrive()
 //

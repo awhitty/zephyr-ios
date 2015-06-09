@@ -25,7 +25,7 @@ class FlatDriveViewManager: NSObject, MKMapViewDelegate {
 
     func updateUI() {
         if trackPoints.count > 1 {
-            self.mapView.addOverlay(self.polyLine())
+            self.mapView.addOverlays(self.coloredSegments())
         }
     }
     
@@ -34,10 +34,10 @@ class FlatDriveViewManager: NSObject, MKMapViewDelegate {
     }
     
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
-        if overlay is MKPolyline {
-            var polyline = overlay as! MKPolyline
+        
+        if let polyline = overlay as? MulticolorPolylineSegment {
             var renderer = MKPolylineRenderer(polyline: polyline)
-            renderer.strokeColor = UIColor.blueColor()
+            renderer.strokeColor = polyline.color
             renderer.lineWidth = 3
             return renderer
         }
@@ -48,7 +48,41 @@ class FlatDriveViewManager: NSObject, MKMapViewDelegate {
     func polyLine() -> MKPolyline {
         var coords = trackPoints.map { $0.location.coordinate }
         coords.reserveCapacity(trackPoints.count)
-        
+
         return MKPolyline(coordinates: &coords, count: coords.count)
+    }
+    
+    func coloredSegments() -> [MulticolorPolylineSegment] {
+        var segments = [MulticolorPolylineSegment]()
+        for i in 0...trackPoints.count - 2 {
+            let firstPoint = trackPoints[i]
+            let secondPoint = trackPoints[i + 1]
+            
+            var coords = [CLLocationCoordinate2D]()
+            coords.reserveCapacity(2)
+            
+            coords.append(firstPoint.location.coordinate)
+            coords.append(secondPoint.location.coordinate)
+            
+            let accel = secondPoint.acceleration
+            
+            var color = "#89D3FF".UIColor
+            
+            let cutoff = 1.0
+                        
+            if accel > cutoff {
+                color = "#9EFFB9".UIColor
+            }
+            
+            if accel < -1*cutoff {
+                color = "#FF4C2D".UIColor
+            }
+            
+            let segment = MulticolorPolylineSegment(coordinates: &coords, count: 2)
+            segment.color = color
+            segments.append(segment)
+        }
+        
+        return segments
     }
 }
