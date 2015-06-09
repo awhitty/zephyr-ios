@@ -30,6 +30,7 @@ class MainViewController: UITabBarController {
         let threedVC = threed.instantiateInitialViewController() as! UIViewController
         
         self.viewControllers = [feedVC, driveVC, threedVC, moreVC]
+        self.selectedIndex = 1
     }
 
     override func didReceiveMemoryWarning() {

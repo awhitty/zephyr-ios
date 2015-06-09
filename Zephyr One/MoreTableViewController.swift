@@ -60,14 +60,34 @@ class MoreTableViewController: UITableViewController, RETableViewManagerDelegate
             PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: { (user, error) -> Void in
                 if let user = user {
                     if user.isNew {
-                        // TODO: reintroduce fb code to set up new user
+                        FBSDKGraphRequest(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection, result, error) -> Void in
+                            if error == nil {
+                                //                            println(result)
+                                user["name"] = result["name"]
+                                user["gender"] = result["gender"]
+                                user["email"] = result["email"]
+                                user["facebookId"] = result["id"]
+                                user.saveEventually()
+                                
+                                self.facebookSection = self.addFacebookSection()
+                                self.carListSection = self.addCarListSection()
+                                self.manager.removeSection(self.facebookConnectSection)
+                                
+                                self.refreshCars()
+                                
+                                self.tableView.reloadData()
+                            }
+                        })
+
+                    } else {
+                        self.facebookSection = self.addFacebookSection()
+                        self.carListSection = self.addCarListSection()
+                        self.manager.removeSection(self.facebookConnectSection)
+                        
+                        self.refreshCars()
+                        
+                        self.tableView.reloadData()
                     }
-                    
-                    self.facebookSection = self.addFacebookSection()
-                    self.carListSection = self.addCarListSection()
-                    self.manager.removeSection(self.facebookConnectSection)
-                    
-                    self.tableView.reloadData()
                 } else {
                     let alert = UIAlertController(title: "Error signing in", message: "Please try signing in through Facebook again in order to connect your account.", preferredStyle: UIAlertControllerStyle.Alert)
                     
@@ -151,7 +171,6 @@ class MoreTableViewController: UITableViewController, RETableViewManagerDelegate
             
             self.carListSection.addItem(RETableViewItem(title: "Add a car", accessoryType: UITableViewCellAccessoryType.DisclosureIndicator, selectionHandler: { (item) -> Void in
                 let carController = EditCarTableViewController()
-                //                self.presentViewController(carController, animated: true, completion: nil)
                 self.navigationController?.pushViewController(carController, animated: true)
             }))
             

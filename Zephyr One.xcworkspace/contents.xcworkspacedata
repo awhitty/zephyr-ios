@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:skylined.gpx">
+   </FileRef>
+   <FileRef
       location = "group:Zephyr One.xcodeproj">
    </FileRef>
    <FileRef

@@ -27,7 +27,6 @@
 		D92E29DA1AD72EF000B926B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29D91AD72EF000B926B1 /* AppDelegate.swift */; };
 		D92E29DD1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */; };
 		D92E29E41AD72EF000B926B1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92E29E31AD72EF000B926B1 /* Images.xcassets */; };
-		D92E29E71AD72EF000B926B1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */; };
 		D92E29F31AD72EF000B926B1 /* Zephyr_OneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92E29F21AD72EF000B926B1 /* Zephyr_OneTests.swift */; };
 		D92E29FD1AD72F0700B926B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92E29FC1AD72F0700B926B1 /* Main.storyboard */; };
 		D92E2A091AD734D700B926B1 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D92E2A081AD734D700B926B1 /* .gitignore */; };
@@ -96,7 +95,6 @@
 		D92E29D91AD72EF000B926B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92E29DC1AD72EF000B926B1 /* Zephyr_One.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zephyr_One.xcdatamodel; sourceTree = "<group>"; };
 		D92E29E31AD72EF000B926B1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D92E29E61AD72EF000B926B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D92E29EC1AD72EF000B926B1 /* Zephyr OneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Zephyr OneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92E29F11AD72EF000B926B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D92E29F21AD72EF000B926B1 /* Zephyr_OneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zephyr_OneTests.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 			isa = PBXGroup;
 			children = (
 				D92E29E31AD72EF000B926B1 /* Images.xcassets */,
-				D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */,
 				D92E29DB1AD72EF000B926B1 /* Zephyr_One.xcdatamodeld */,
 				D92E29D81AD72EF000B926B1 /* Info.plist */,
 			);
@@ -443,7 +440,6 @@
 				D92E2A091AD734D700B926B1 /* .gitignore in Resources */,
 				D94458CC1AD73C3A00E234F5 /* Feed.storyboard in Resources */,
 				D94458CA1AD73BC800E234F5 /* More.storyboard in Resources */,
-				D92E29E71AD72EF000B926B1 /* LaunchScreen.xib in Resources */,
 				D92E29E41AD72EF000B926B1 /* Images.xcassets in Resources */,
 				D96852FC1B26EE0F003874D2 /* art.scnassets in Resources */,
 				D92E29FD1AD72F0700B926B1 /* Main.storyboard in Resources */,
@@ -540,17 +536,6 @@
 			targetProxy = D92E29ED1AD72EF000B926B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D92E29E51AD72EF000B926B1 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D92E29E61AD72EF000B926B1 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D92E29F41AD72EF000B926B1 /* Debug */ = {
