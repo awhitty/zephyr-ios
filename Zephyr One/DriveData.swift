@@ -15,8 +15,10 @@ class DriveData: NSObject, NSCoding {
     
     var distance: Double {
         var d: Double = 0.0
-        for i in 0...(trackPoints.count - 2) {
-            d += trackPoints[i].location.distanceFromLocation(trackPoints[i + 1].location)
+        if (trackPoints.count >  1) {
+            for i in 0...(trackPoints.count - 2) {
+                d += trackPoints[i].location.distanceFromLocation(trackPoints[i + 1].location)
+            }
         }
         
         return d

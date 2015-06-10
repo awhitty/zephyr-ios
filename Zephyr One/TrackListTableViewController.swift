@@ -34,7 +34,7 @@ class TrackListTableViewController: UITableViewController, RETableViewManagerDel
     }
     
     var tracks = [
-        "Skyline": "skyline",
+        "Skyline": "skyline-final",
         "Laguna Seca": "laguna-seca",
         "Test Track": "original"
     ]
